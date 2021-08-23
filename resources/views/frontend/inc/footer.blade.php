@@ -1,1 +1,0 @@
-@yield('page_specific_js')
