@@ -21,7 +21,7 @@ use App\Http\Controllers\Admin\Banner\BannerController;
 Route::get('/', [HomeController::class,'index'])->name('front.index');
 
 //admin routes
-Route:group(['prefix' => '/admin'],function(){
+Route::group(['prefix' => '/admin'],function(){
     //for the dashboard
     Route::get('',[DashboardController::class,'index'])->name('admin.dashboard.index');
     //for the banner
