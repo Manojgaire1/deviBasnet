@@ -13,7 +13,7 @@
     <meta name="author" content="Author">
 
     <!-- Change the site title -->
-    <title>BRAX | Responsive Personal Portfolio Template</title>
+    <title>Dr. Devi Bahadur Basnet | My Personal Website</title>
 
     <!-- You can regenerate the favicons as you wish using http://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('front-assets/favicon/apple-touch-icon.png')}}">
