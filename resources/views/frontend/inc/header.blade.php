@@ -63,7 +63,7 @@
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#experience">Timeline</a>
         <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#activity">Activities</a>
+        <a class="nav-link" href="#portfolio">Activities</a>
         <a class="nav-link" href="#contact">Contact</a>
     </nav>
     <span id="openNav" onclick="openNav()">&#9776;</span>

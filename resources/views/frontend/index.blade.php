@@ -195,7 +195,7 @@
     <!-- HIRE ME END -->
 
     <!-- PORTFOLIO -->
-    <section id="activity">
+    <section id="portfolio">
         <div class="section-header">
             <div>
                 <h2>My Activities</h2>
