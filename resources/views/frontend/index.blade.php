@@ -123,7 +123,7 @@
     <section id="experience">
         <div class="section-header">
             <div>
-                <h2>My Experience</h2>
+                <h2>My Career timeline</h2>
             </div>
         </div>
         <div class="container">
@@ -195,10 +195,10 @@
     <!-- HIRE ME END -->
 
     <!-- PORTFOLIO -->
-    <section id="portfolio">
+    <section id="activity">
         <div class="section-header">
             <div>
-                <h2>My Works</h2>
+                <h2>My Activities</h2>
             </div>
         </div>
         <div class="container">

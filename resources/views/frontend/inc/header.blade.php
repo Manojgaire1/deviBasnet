@@ -61,8 +61,9 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a class="nav-link" href="#hero">Home</a>
         <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Timeline</a>
         <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="nav-link" href="#activity">Activities</a>
         <a class="nav-link" href="#contact">Contact</a>
     </nav>
     <span id="openNav" onclick="openNav()">&#9776;</span>
