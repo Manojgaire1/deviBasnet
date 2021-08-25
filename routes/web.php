@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//front controllers
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Admin\DashboardController;
+//admin controllers
+use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\Banner\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,12 @@ use App\Http\Controllers\Admin\DashboardController;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('front.index');
+
+//admin routes
+Route:group(['prefix' => '/admin'],function(){
+    //for the dashboard
+    Route::get('',[DashboardController::class,'index'])->name('admin.dashboard.index');
+    //for the banner
+    Route::get('/banners',[BannerController::class,'index'])->name('admin.banner.index');
+    Route::post('/banners',[BannerController::class,'index'])->name('admin.banner.store');
+});
