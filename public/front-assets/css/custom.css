@@ -639,7 +639,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 /******************************************************************************************************************/
 
 #hireme {
-    background: url(../img/hireme-bg.jpg) repeat-y;
+    background: url(../img/hireme-bg.png) repeat-y;
     background-size: cover;
     background-color: #000;
     text-align: center;
@@ -1130,4 +1130,11 @@ nav a.nav-link:active, nav a.nav-link:focus {
 
 .footer .fa:hover {
     color: #eee;
+}
+
+/* added by partner technology */
+section#about #aboutRight ul{
+    text-align: left;
+    line-height: 1.8em;
+    color: #666;
 }

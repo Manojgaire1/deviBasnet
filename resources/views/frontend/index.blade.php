@@ -48,14 +48,15 @@
                         <p>
                         Highly self-motivated Ph.D. graduate with demonstrated research expertise in genetic, 
                         antibody engineering and isolation of monoclonal antibody, with strong interpersonal skills 
-                        developed from extensive social exposure. Special expertise in the following areas:<br><br>
-                        Antibody Engineering<br>
-                        Streptomyces Genetics<br>
-                        Molecular Biology<br>
-                        Stable Cell line Development<br>
-                        Bioinformatics<br>
-                        Biosynthesis
-                        </p>
+                        developed from extensive social exposure. Special expertise in the following areas:</p>
+                        <ul>
+                            <li>Antibody Engineering</li>
+                            <li>Streptomyces Genetics</li>
+                            <li>Molecular Biology</li>
+                            <li>Stable Cell line Development</li>
+                            <li>Bioinformatics</li>
+                            <li>Biosynthesis</li>
+                        </ul>
                     </div>
                 </div>
             </div>

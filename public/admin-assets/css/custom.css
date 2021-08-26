@@ -4236,6 +4236,13 @@ table.vendor-print-payment-2 td input[type=number], table.driver-salary-print-2 
     padding:5px 35px !important;
 }
 
+/* added by partner technology */
+#aboutRight ul{
+    text-align: left;
+    line-height: 1.8em;
+    color: #666;
+}
+
 
 
 
