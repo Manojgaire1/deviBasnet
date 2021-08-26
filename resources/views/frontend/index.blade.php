@@ -24,7 +24,7 @@
 
                 <div class="col-lg-6 col-12">
                     <div class="photo-wrap">
-                        <img src="{{asset('front-assets/img/photo.jpg')}}" class="photo" alt=""/>
+                        <img src="{{asset('front-assets/img/photo.png')}}" class="photo" alt=""/>
 
                         <div class="photo-overlay">
                             <div class="photo-text social">
