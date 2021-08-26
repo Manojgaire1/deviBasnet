@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:200,300,300i,400,700" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('front-assets/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 
     <!-- Pretty Photo -->
     <link rel="stylesheet" href="{{asset('front-assets/css/prettyPhoto.css')}}"/>
