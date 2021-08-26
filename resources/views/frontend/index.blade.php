@@ -3,11 +3,11 @@
 <!-- HERO AREA -->
 <div class="jumbotron" id="hero" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
         <div class="container">
-            <h1>Hello, I am Dr. Devi Bahadur Basnet</h1>
-            <span class="typed">I am web developer</span>
+            <h1>Hello, I am Devi B. Basnet</h1>
+            <span class="typed">I am social worker</span>
 
             <div class="typed-wrap"></div>
-            <a href="#portfolio" class="btn btn-primary portfolio-link scroll-link">See my portfolio</a>
+            <a href="#portfolio" class="btn btn-primary portfolio-link scroll-link">See my activities</a>
         </div>
     </div>
     <!-- HERO AREA END -->
@@ -40,25 +40,21 @@
                 </div>
                 <div id="aboutRight" class="col-lg-6 col-12">
                     <div>
-                        <h4>Hello! I am Dr. Devi Bahadur Basnet</h4>
+                        <h4>Hello! I am Devi B. Basnet</h4>
 
                         <h2>ABOUT ME</h2>
                     </div>
                     <div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices, nulla et
-                            egestas venenatis, urna ante tincidunt erat, vitae lacinia ante urna dignissim purus. Class
-                            aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam
-                            diam purus, facilisis eu placerat vel, egestas vel massa. Phasellus pharetra urna at sem
-                            convallis bibendum. Fusce sed leo quis purus luctus tempus. Ut ornare mattis justo.
-                        </p>
-
-                        <p>
-                            Pellentesque lectus libero, lobortis sed quam in, congue elementum tellus. Vestibulum dui
-                            enim, aliquet in tellus id, luctus tristique velit. Mauris augue sapien, condimentum sed
-                            ligula sit amet, facilisis aliquet nulla. Donec sed congue tellus, quis efficitur nisl.
-                            Maecenas at sapien orci. Donec dapibus pellentesque orci, nec egestas sapien ultricies eu.
-                            Morbi eu sem commodo, pellentesque massa quis.
+                        Highly self-motivated Ph.D. graduate with demonstrated research expertise in genetic, 
+                        antibody engineering and isolation of monoclonal antibody, with strong interpersonal skills 
+                        developed from extensive social exposure. Special expertise in the following areas:<br><br>
+                        Antibody Engineering<br>
+                        Streptomyces Genetics<br>
+                        Molecular Biology<br>
+                        Stable Cell line Development<br>
+                        Bioinformatics<br>
+                        Biosynthesis
                         </p>
                     </div>
                 </div>
@@ -204,27 +200,24 @@
         <div class="container">
             <div id="filters-group">
                 <a class="filter" data-filter="*">show all</a>
-                <a class="filter" data-filter=".plugins">plugins</a>
-                <a class="filter" data-filter=".design">design</a>
-                <a class="filter" data-filter=".photography">photography</a>
+                <a class="filter" data-filter=".plugins">Social</a>
+                <a class="filter" data-filter=".design">Scientific</a>
             </div>
             <div id="portfolio-items" class="row">
-                <div class="item col-md-6 col-lg-4 photography" data-category="photography">
-                    <a title="Custom description."
-                       data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio1.jpg')}}">
-                        <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio1.jpg')}}" alt="Photography">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                </div>
                 <div class="item col-md-6 col-lg-4 plugins design" data-category="plugins, design">
                     <a title="Custom description."
                        data-rel="prettyPhoto"
                        href="{{asset('front-assets/img/portfolio/portfolio2.jpg')}}">
                         <div class="item-wrap">
                             <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio2.jpg')}}" alt="WordPress Plugin">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                    <a title="Custom description."
+                       data-rel="prettyPhoto"
+                       href="{{asset('front-assets/img/portfolio/portfolio1.jpg')}}">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio1.jpg')}}" alt="Photography">
                         </div>
                         <span class="magnifier"></span>
                     </a>

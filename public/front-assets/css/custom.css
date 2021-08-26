@@ -321,7 +321,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 /******************************************************************************************************************/
 
 .jumbotron {
-    background: url(../img/hero.jpg) repeat-y;
+    background: url(../img/hero.png) repeat-y;
     background-size: cover;
     background-color: #fff;
     position: relative;

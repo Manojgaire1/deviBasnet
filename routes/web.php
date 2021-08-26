@@ -23,8 +23,12 @@ Route::get('/', [HomeController::class,'index'])->name('front.index');
 //admin routes
 Route::group(['prefix' => '/admin'],function(){
     //for the dashboard
-    Route::get('',[DashboardController::class,'index'])->name('admin.dashboard.index');
-    //for the banner
-    Route::get('/banners',[BannerController::class,'index'])->name('admin.banner.index');
-    Route::post('/banners',[BannerController::class,'index'])->name('admin.banner.store');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('admin.dashboard.index');
+    //for the banners
+    Route::group(['prefix' => '/banners'],function(){
+        Route::get('',[BannerController::class,'index'])->name('admin.banner.index');
+        Route::post('/newBanner',[BannerController::class,'store'])->name('admin.banner.store');
+        Route::get('/{bannerId}/edit',[BannerController::class,'edit'])->name('admin.banner.edit');
+        Route::post('/{bannerId}/',[BannerController::class,'udpate'])->name('admin.banner.update');
+    });
 });
