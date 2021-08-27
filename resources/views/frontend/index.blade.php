@@ -169,6 +169,9 @@
                 <div class="timeline-content">
                     <h3>Senior Research Scientist | Medytox, Inc.</h3>
                     <span>2008 - Present</span>
+                    <p> Director - The Center for natural and applied sciences(CENAS)</p> 
+                    <p> Member - Research Institute for Bioscience and Biotechnology (RIBB)</p>
+                    <p> Member - Anti Snakevenom Serum Research and Development Pvt. Ltd.</p>
                 </div>
             </div>
         </div>
