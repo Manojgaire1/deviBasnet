@@ -167,7 +167,7 @@
             <div class="timeline-block timeline-block-left">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>Senior Research Scientist|Medytox, Inc.</h3>
+                    <h3>Senior Research Scientist | Medytox, Inc.</h3>
                     <span>2008 - Present</span>
                 </div>
             </div>
