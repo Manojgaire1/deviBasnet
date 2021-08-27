@@ -129,47 +129,31 @@
                 <div class="timeline-content">
                     <h3>SLC(School Leaving Certificate)</h3>
                     <span>1980 - 1990</span>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate.</p>
+                    <p>Sautha Secondary School</p>
                 </div>
             </div>
             <div class="timeline-block timeline-block-left">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>IAC & BAC</h3>
+                    <h3>I.SC. & B.SC.</h3>
                     <span>1991 - 1997</span>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate.</p>
+                    <p>Mahendra Morang Campus</p>
                 </div>
             </div>
             <div class="timeline-block timeline-block-right">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>MAC</h3>
-                    <span>1988 - 1999</span>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate.</p>
+                    <h3>M.SC.</h3>
+                    <span>1998 - 2000</span>
+                    <p>Tribhuwan University</p>
                 </div>
             </div>
             <div class="timeline-block timeline-block-left">
                 <div class="marker"></div>
                 <div class="timeline-content">
                     <h3>PHD</h3>
-                    <span>2005</span>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate.</p>
+                    <span>2001-2005</span>
+                    <p>Sun moon University</p>
                 </div>
             </div>
             <div class="timeline-block timeline-block-right">
@@ -177,11 +161,7 @@
                 <div class="timeline-content">
                     <h3>Post Doctrate</h3>
                     <span>2006 - 2008</span>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate.</p>
+                    <p>Ewha Woman’s University</p>
                 </div>
             </div>
         </div>
