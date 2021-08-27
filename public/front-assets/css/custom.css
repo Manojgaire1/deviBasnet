@@ -961,7 +961,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 2rem;
-    border-bottom: 4px dashed #fff;
+    /* border-bottom: 4px dashed #fff; */
 }
 
 #contact .container {
@@ -1022,6 +1022,11 @@ nav a.nav-link:active, nav a.nav-link:focus {
 #contact .section-header p {
     color: #f0f0f0;
     letter-spacing: 0.5px;
+}
+
+#contact .fa {
+    padding-right: 10px;
+    font-size: 1.2rem;
 }
 
 #contact input, #contact textarea {

@@ -29,11 +29,11 @@
                         <div class="photo-overlay">
                             <div class="photo-text social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-google"></i></a>
+                                <!-- <a href="#"><i class="fa fa-google"></i></a> -->
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tumblr"></i></a>
+                                <!-- <a href="#"><i class="fa fa-tumblr"></i></a> -->
                                 <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-youtube"></i></a>
+                                <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
     <section id="services">
         <div class="section-header">
             <div>
-                <h2>Services I offer</h2>
+                <h2>My interests</h2>
             </div>
         </div>
         <div>
@@ -76,8 +76,8 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="box">
-                            <div class="circle"><i class="fa fa-desktop"></i></div>
-                            <h3>Web Design</h3>
+                            <div class="circle"><i class="fa fa-handshake-o"></i></div>
+                            <h3>Soical work</h3>
 
                             <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
                                 ipsum dui.</p>
@@ -86,7 +86,7 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="box">
                             <div class="circle"><i class="fa fa-cogs"></i></div>
-                            <h3>Coding</h3>
+                            <h3>Yoga Medititation</h3>
 
                             <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
                                 ipsum dui.</p>
@@ -95,7 +95,7 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="box">
                             <div class="circle"><i class="fa fa-code"></i></div>
-                            <h3>Clean Code</h3>
+                            <h3>Motivator</h3>
 
                             <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
                                 ipsum dui.</p>
@@ -127,8 +127,8 @@
             <div class="timeline-block timeline-block-right">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>Web Designer</h3>
-                    <span>2015 - 2018</span>
+                    <h3>SLC(School Leaving Certificate)</h3>
+                    <span>1980 - 1990</span>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -139,8 +139,8 @@
             <div class="timeline-block timeline-block-left">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>Web Developer</h3>
-                    <span>2010 - 2015</span>
+                    <h3>IAC & BAC</h3>
+                    <span>1991 - 1997</span>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -151,8 +151,8 @@
             <div class="timeline-block timeline-block-right">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>Programmer</h3>
-                    <span>2002 - 2010</span>
+                    <h3>MAC</h3>
+                    <span>1988 - 1999</span>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -163,8 +163,20 @@
             <div class="timeline-block timeline-block-left">
                 <div class="marker"></div>
                 <div class="timeline-content">
-                    <h3>Graphics Designer</h3>
-                    <span>2000 - 2002</span>
+                    <h3>PHD</h3>
+                    <span>2005</span>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate.</p>
+                </div>
+            </div>
+            <div class="timeline-block timeline-block-right">
+                <div class="marker"></div>
+                <div class="timeline-content">
+                    <h3>Post Doctrate</h3>
+                    <span>2006 - 2008</span>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -201,64 +213,67 @@
         <div class="container">
             <div id="filters-group">
                 <a class="filter" data-filter="*">show all</a>
-                <a class="filter" data-filter=".plugins">Social</a>
-                <a class="filter" data-filter=".design">Scientific</a>
+                <a class="filter" data-filter=".social">Social</a>
+                <a class="filter" data-filter=".research">Research and Development</a>
+                <a class="filter" data-filter=".entrepreneur">Entrepreneur</a>
             </div>
             <div id="portfolio-items" class="row">
-                <div class="item col-md-6 col-lg-4 plugins design" data-category="plugins, design">
-                    <a title="Custom description."
+                <div class="item col-md-6 col-lg-4 plugins social" data-category="social">
+                    <a title="Participate in Nepal embassy national day in Seoul held on 2012-02-12. It was organized in Nepal embassy buiding on the presence of Nepal ambassador Mr. Rakesh Rana."
                        data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio2.jpg')}}">
+                       href="{{asset('front-assets/img/activities/Nepal-Embassy-national-day-in-Seoul.png')}}">
                         <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio2.jpg')}}" alt="WordPress Plugin">
-                        </div>
-                        <span class="magnifier"></span>
-                    </a>
-                    <a title="Custom description."
-                       data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio1.jpg')}}">
-                        <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio1.jpg')}}" alt="Photography">
+                            <img class="img-fluid" src="{{asset('front-assets/img/activities/Nepal-Embassy-national-day-in-Seoul.png')}}" alt="Nepal embassy national day in Seoul">
                         </div>
                         <span class="magnifier"></span>
                     </a>
                 </div>
-                <div class="item col-md-6 col-lg-4 plugins photography" data-category="plugins, photography">
-                    <a title="Custom description."
+                <div class="item col-md-6 col-lg-4 plugins social" data-category="social">
+                    <a title="Me with Dr. Baburam Bhattarai"
                        data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio3.jpg')}}">
+                       href="{{asset('front-assets/img/activities/Devi_with_Dr_Baburam.png')}}">
                         <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio3.jpg')}}" alt="Photography">
+                            <img class="img-fluid" src="{{asset('front-assets/img/activities/Devi_with_Dr_Baburam.png')}}" alt="Me with Dr. Baburam Bhattarai">
                         </div>
                         <span class="magnifier"></span>
                     </a>
                 </div>
-                <div class="item col-md-6 col-lg-4 col-12 plugins" data-category="plugins">
+                <div class="item col-md-6 col-lg-4 plugins social" data-category="social">
                     <a title="Custom description."
                        data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio4.jpg')}}">
+                       href="{{asset('front-assets/img/activities/2016_gajedo_1.png')}}">
                         <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio4.jpg')}}" alt="jQuery Plugin">
+                            <img class="img-fluid" src="{{asset('front-assets/img/activities/2016_gajedo_1.png')}}" alt="Photography">
                         </div>
                         <span class="magnifier"></span>
                     </a>
                 </div>
-                <div class="item col-md-6 col-lg-4 col-12 design" data-category="design">
-                    <a title="Custom description."
+                <div class="item col-md-6 col-lg-4 col-12 social" data-category="social">
+                    <a title="Participated in inaguration ceremony of Nepal house help on 2012."
                        data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio5.jpg')}}">
+                       href="{{asset('front-assets/img/activities/2012_Program_2.png')}}">
                         <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio5.jpg')}}" alt="Design">
+                            <img class="img-fluid" src="{{asset('front-assets/img/activities/2012_Program_2.png')}}" alt="Inaguration ceremony of Nepal house in 2012.">
                         </div>
                         <span class="magnifier"></span>
                     </a>
                 </div>
-                <div class="item col-md-6 col-lg-4 col-12 plugins design" data-category="plugins, design">
-                    <a title="Custom description."
+                <div class="item col-md-6 col-lg-4 col-12 social" data-category="social">
+                    <a title="Interaction with Society of Nepalese students in Korea."
                        data-rel="prettyPhoto"
-                       href="{{asset('front-assets/img/portfolio/portfolio6.jpg')}}">
+                       href="{{asset('front-assets/img/activities/2014_interaction_1.png')}}">
                         <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('front-assets/img/portfolio/portfolio6.jpg')}}" alt="Design">
+                            <img class="img-fluid" src="{{asset('front-assets/img/activities/2014_interaction_1.png')}}" alt="Interaction with Society of Nepalese students in Korea.">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+                <div class="item col-md-6 col-lg-4 col-12 social" data-category="social">
+                    <a title="Interactionwith Mahabir Pun on 2014 at Seoul."
+                       data-rel="prettyPhoto"
+                       href="{{asset('front-assets/img/activities/2014_Mahabir_interaction-2.png')}}">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="{{asset('front-assets/img/activities/2014_Mahabir_interaction-2.png')}}" alt="Interaction with Mahabir Pun">
                         </div>
                         <span class="magnifier"></span>
                     </a>
@@ -318,7 +333,7 @@
     <section id="blog">
         <div class="section-header">
             <div>
-                <h2>Watch my Blog</h2>
+                <h2>Watch my Opinions</h2>
             </div>
         </div>
         <div class="container">
@@ -366,14 +381,24 @@
         <div class="section-header">
             <div>
                 <h2>Contact Me</h2>
-
-                <p>Please fill the form below. I will contact you as soon as possible.</p>
+                <!-- <p>Please fill the form below. I will contact you as soon as possible.</p> -->
             </div>
         </div>
         <div class="container">
-            <div id="form-messages"></div>
-            <div class="form-wrap">
-                <form id="contact-form" action="api/contact.php" method="post" autocomplete="off">
+            <!-- <div id="form-messages"></div>
+            <div class="form-wrap"> -->
+            <div class="col-12 col-md-12">
+                    <div>
+                        <i class="fa fa-map-marker"> </i>Suwon, South Korea 
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"> </i>+82 10-2343-4725
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope"> </i>contact@devibasnet.com
+                    </div>
+            </div>
+                <!-- <form id="contact-form" action="api/contact.php" method="post" autocomplete="off">
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <input class="form-control" type="text" placeholder="Your Name" name="name" id="name"
@@ -393,9 +418,9 @@
                             <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
                         </div>
                     </div>
-                </form>
-                <div id="ajaxLoad"></div>
-            </div>
+                </form> -->
+                <!-- <div id="ajaxLoad"></div> -->
+            <!-- </div> -->
         </div>
     </section>
     <!-- CONTACT FORM  END -->

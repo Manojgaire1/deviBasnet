@@ -3,7 +3,7 @@
 <div id="footer-wrap">
 
     <!-- CONTACT INFO  -->
-    <div id="contact2">
+    <!-- <div id="contact2">
         <div class="container">
             <div class="row withMap">
                 <div class="col-12 col-md-8">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- CONTACT INFO END -->
 
     <!-- FOOTER -->
@@ -41,11 +41,11 @@
                 <div class="col-12 col-sm-6 social">
                     <p class="pull-right">
                         <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-google"></i></a>
+                        <!-- <a href="#"><i class="fa fa-google"></i></a> -->
                         <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-tumblr"></i></a>
+                        <!-- <a href="#"><i class="fa fa-tumblr"></i></a> -->
                         <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
+                        <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
                     </p>
                 </div>
             </div>
