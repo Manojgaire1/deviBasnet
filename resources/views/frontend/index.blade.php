@@ -77,7 +77,7 @@
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="box">
                             <div class="circle"><i class="fa fa-handshake-o"></i></div>
-                            <h3>Soical work</h3>
+                            <h3>Social work</h3>
 
                             <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
                                 ipsum dui.</p>
