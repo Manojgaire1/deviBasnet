@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="#">
-    <meta name="keywords" content="Indian Restaurant, Spicy Restaurant, Indian Spicy Restaurant">
+    <meta name="keywords" content="Devi basnet personal website">
     <meta name="author" content="Partner Technology">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Favicon icon -->
@@ -96,8 +96,7 @@
                         <i class="ti-search"></i>
                     </a>
                     <a href="{{route('admin.dashboard.index')}}" class="brand-logo">
-
-                        <img class="img-fluid" src="{{asset('/admin-assets/images/zen-logo.png')}}" alt="Zencoltd logo" />
+                        Devi Basnet
                     </a>
                     <a class="mobile-options">
                         <i class="ti-more"></i>
