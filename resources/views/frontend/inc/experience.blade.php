@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="container">
-            @foreach($timlines as $timeline)
+            @foreach($timelines as $timeline)
             <div class="timeline-block timeline-block-{{$timeline->position}}">
                 <div class="marker"></div>
                 <div class="timeline-content">
