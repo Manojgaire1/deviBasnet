@@ -13,17 +13,14 @@
                             <div class="circle"><i class="fa fa-handshake-o"></i></div>
                             <h3>Social work</h3>
 
-                            <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
-                                ipsum dui.</p>
+                            <p>I am activally involves in NRNA and different Neplease society in Korea. I love to help other who are seeking for help.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="box">
                             <div class="circle"><i class="fa fa-cogs"></i></div>
                             <h3>Yoga Medititation</h3>
-
-                            <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
-                                ipsum dui.</p>
+                            <p>For the healthy body and mind yoga and meditation play an improtant role. As being health is the wealth i meditiate daily.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
@@ -31,8 +28,7 @@
                             <div class="circle"><i class="fa fa-code"></i></div>
                             <h3>Motivator</h3>
 
-                            <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
-                                ipsum dui.</p>
+                            <p>As Korea being the aborad country, students are really fustrated. I love to motivate the young minds.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
@@ -40,8 +36,7 @@
                             <div class="circle"><i class="fa fa-camera"></i></div>
                             <h3>Photography</h3>
 
-                            <p>Praesent magna neque, dapibus sit amet eros sed, aliquam interdum felis. Nulla rhoncus
-                                ipsum dui.</p>
+                            <p>I love to take photo of Nature and human being. Photography help me to take closer to the Nature and human.</p>
                         </div>
                     </div>
                 </div>
