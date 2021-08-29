@@ -36,22 +36,22 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/vehicles*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/activities*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">Activity</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                             <ul class="pcoded-submenu">
-                                <li class="{{Request::is('admin/vehicles') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.banner.index')}}">
+                                <li class="{{Request::is('admin/activities') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.activity.index')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext">{{ __('Activity Lists') }}</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="{{Request::is('admin/vehicles') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.banner.index')}}">
+                                <li class="{{Request::is('admin/activities/types') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.activity.type.index')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext">{{ __('Type Lists') }}</span>
                                         <span class="pcoded-mcaret"></span>

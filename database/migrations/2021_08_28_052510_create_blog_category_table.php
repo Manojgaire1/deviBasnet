@@ -18,8 +18,8 @@ class CreateBlogCategoryTable extends Migration
             $table->id();
             $table->string('title',255)->unique();
             $table->string('slug',255)->unique()->index();
-            $table->text('content')->nullable();
             $table->enum('status',['0','1'])->default('1')->index(); // 1 for active and 0 for inactive
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

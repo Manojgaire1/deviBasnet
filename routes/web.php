@@ -6,6 +6,8 @@ use App\Http\Controllers\Frontend\HomeController;
 //admin controllers
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Banner\BannerController;
+use App\Http\Controllers\Admin\Activity\ActivityController;
+use App\Http\Controllers\Admin\Activity\Type\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,12 +25,30 @@ Route::get('/', [HomeController::class,'index'])->name('front.index');
 //admin routes
 Route::group(['prefix' => '/admin'],function(){
     //for the dashboard
+    Route::get('',function(){
+        return redirect()->route('admin.dashboard.index');
+    });
     Route::get('/dashboard',[DashboardController::class,'index'])->name('admin.dashboard.index');
     //for the banners
     Route::group(['prefix' => '/banners'],function(){
         Route::get('',[BannerController::class,'index'])->name('admin.banner.index');
         Route::post('/newBanner',[BannerController::class,'store'])->name('admin.banner.store');
         Route::get('/{bannerId}/edit',[BannerController::class,'edit'])->name('admin.banner.edit');
-        Route::post('/{bannerId}/',[BannerController::class,'udpate'])->name('admin.banner.update');
+        Route::post('/{id}',[BannerController::class,'udpate'])->name('admin.banner.update');
+    });
+
+    //route for activity
+    Route::group(['prefix' => '/activities'],function(){
+        Route::get('',[ActivityController::class,'index'])->name('admin.activity.index');
+        Route::get('/{activityId}/edit',[ActivityController::class,'edit'])->name('admin.activity.edit');
+        Route::post('/newActivity',[ActivityController::class,'store'])->name('admin.activity.store');
+        Route::post('/{id}',[ActivityController::class,'udpate'])->name('admin.activity.update');
+        //activity type
+        Route::group(['prefix' => '/types'],function(){
+            Route::get('',[TypeController::class,'index'])->name('admin.activity.type.index');
+            Route::post('/newType',[TypeController::class,'store'])->name('admin.activity.type.store');
+            Route::get('/{typeId}/edit',[TypeController::class,'edit'])->name('admin.activity.type.edit');
+            Route::post('/{id}',[TypeController::class,'update'])->name('admin.activity.type.update');
+        });
     });
 });
