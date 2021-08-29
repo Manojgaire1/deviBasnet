@@ -3,7 +3,7 @@
     @include('frontend.inc.banner')
     @include('frontend.inc.about')
     @include('frontend.inc.services')
-    @include('frontend.inc.experience')
+    @include('frontend.inc.experience',['timelines' => $timelines])
     @include('frontend.inc.hireMe')
     @include('frontend.inc.activity',['types' => $types,'activities' => $activities])
     @include('frontend.inc.testimonials')
