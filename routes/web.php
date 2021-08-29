@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Banner\BannerController;
 use App\Http\Controllers\Admin\Activity\ActivityController;
 use App\Http\Controllers\Admin\Activity\Type\TypeController;
+use App\Http\Controllers\Admin\Timeline\TimelineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,5 +53,13 @@ Route::group(['prefix' => '/admin'],function(){
             Route::post('/{id}',[TypeController::class,'update'])->name('admin.activity.type.update');
             Route::delete('/{id}',[TypeController::class,'destroy'])->name('admin.activity.type.destroy');
         });
+    });
+
+    Route::group(['prefix' => '/timelines'],function(){
+        Route::get('',[TimelineController::class,'index'])->name('admin.timeline.index');
+        Route::get('/{timelineId}/edit',[TimelineController::class,'edit'])->name('admin.timeline.edit');
+        Route::post('/newTimeline',[TimelineController::class,'store'])->name('admin.timeline.store');
+        Route::post('/{id}',[TimelineController::class,'update'])->name('admin.timeline.update');
+        Route::delete('/{id}',[TimelineController::class,'destroy'])->name('admin.timeline.destroy');
     });
 });

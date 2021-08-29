@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Timeline;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Timeline;
+use Carbon\Carbon;
 
 class TimelineController extends Controller
 {
@@ -27,13 +28,22 @@ class TimelineController extends Controller
         if($request->ajax()):
             $timelines = Timeline::orderBy('id','desc');
             return Datatables($timelines)
+            ->addColumn('start_date',function($timeline){
+                return Carbon::parse($timeline->start_date)->format('Y');
+            })
+            ->addColumn('end_date',function($timeline){
+                return Carbon::parse($timeline->end_date)->format('Y');
+            })
+            ->addColumn('position',function($timeline){
+                return ucfirst($timeline->position);
+            })
             ->addColumn('action', function ($timeline) {
                 $return_html = '<div class="dropdown">' .
                     '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-more-alt"></i></button>' .
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >' .
                     '<ul>' .
                     '<li><button class="dropdown-item edit-btn" data-timeline-id = "'.$timeline->id.'" href = "#" > Edit</button ></li >'.
-                    '<li ><a class="dropdown-item delete-btn" href = "#" data-timeline-id = '.$type->id.' > Delete</a ></li >'.
+                    '<li ><a class="dropdown-item delete-btn" href = "#" data-timeline-id = '.$timeline->id.' > Delete</a ></li >'.
                     '</ul >'.
                     '</div ></div >';
                 return $return_html;
@@ -95,6 +105,8 @@ class TimelineController extends Controller
     {
         //
         $this->selectedTimeline = $this->timeline::findOrFail($id);
+        $this->selectedTimeline->start_date = Carbon::parse($this->selectedTimeline->start_date)->format('Y');
+        $this->selectedTimeline->end_date  = Carbon::parse($this->selectedTimeline->end_date)->format('Y');
         if($this->selectedTimeline):
             return response()->json(array('status' => 'success', 'timeline' => $this->selectedTimeline,'message' => 'Timeline has been fetched successfully!'),200);
         else:

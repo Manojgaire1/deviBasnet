@@ -29,8 +29,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class=" pcoded-trigger  {{Request::is('admin/models*') ? 'active ' : '' }}">
-                            <a href="{{url('/admin/models')}}">
+                        <li class=" pcoded-trigger  {{Request::is('admin/timelines*') ? 'active ' : '' }}">
+                            <a href="{{url('/admin/timelines')}}">
                                 <span class="pcoded-micon"><i class="ti-truck"></i><b>V</b></span>
                                 <span class="pcoded-mtext">Timline</span>
                                 <span class="pcoded-mcaret"></span>

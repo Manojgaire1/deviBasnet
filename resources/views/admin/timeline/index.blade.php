@@ -2,6 +2,7 @@
 @section('page_title','Timeline lists')
 @section('page_specific_css')
 <link href="{{ asset('/admin-assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('front-assets/css/select2.min.css')}}">
 @endsection
 @section('content')
 <div class="pcoded-content vehicle">
@@ -15,7 +16,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-7">
-                                <h2>Types</h2>
+                                <h2>Timelines</h2>
                             </div>
                             <div class="col-md-5">
                                 <div class="add-new-vehicle">
@@ -31,9 +32,12 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Name</th>
+                                    <th>Title</th>
                                     <th>Slug</th>
-                                    <th>Total Activity</th>
+                                    <th>From date</th>
+                                    <th>To date</th>
+                                    <th>Position</th>
+                                    <th>Description</th>
                                     <th>status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -60,7 +64,7 @@
 	<div class="modal-dialog modal-md" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Add New Type</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Add New Timeline</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -71,16 +75,55 @@
 				<div class="modal-body category_add_body">
                      <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="make_name">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Social">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="make_name">Title</label>
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="SLC(School Leaving Certificate)">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Status</label>
-                                <select name="status" class="form-control">
-                                    <option value="1" selected="selected">Active</option>
-                                    <option value="0">Inactive</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>From date</label>
+                                        <select name="from_date" class="form-control timeline_date">
+                                            @foreach(range(date('Y'),'1950') as $year)
+                                                <option value="{{$year}}">{{$year}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>To date</label>
+                                        <select name="to_date" class="form-control timeline_date">
+                                            @foreach(range(date('Y'),'1950') as $year)
+                                                <option value="{{$year}}">{{$year}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <select name="status" class="form-control">
+                                            <option value="1" selected="selected">Active</option>
+                                            <option value="0">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Position</label>
+                                        <select name="position" class="form-control">
+                                            <option value="left" selected="selected">Left</option>
+                                            <option value="right">Right</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="type_id" id="type_id" value=""/>
+                <input type="hidden" name="timeline_id" id="timeline_id" value=""/>
                 <div class="modal-footer">
                     <button type="submit" name="btnSubmit" class="btn btn-green">Save</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -109,9 +152,11 @@
     <script src="{{asset('admin-assets/formvalidation/dist/js/FormValidation.min.js')}}"></script>
     <script src="{{asset('admin-assets/formvalidation/dist/js/plugins/Bootstrap.min.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{asset('front-assets/js/select2.min.js')}}"></script>
     <script src="https://cdn.tiny.cloud/1/htwjojrmzrtocohmg23pftvkzb8dn907vrzqzfeju23jhzf6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         $(document).ready(function () {
+            $("select.timeline_date").select2({});
             //intialize the variables
             var save_method = "add";
             var model_url;
@@ -133,10 +178,10 @@
                 processing: true,
                 serverSide: true,
                 language              : {
-                    searchPlaceholder     : "Search types"
+                    searchPlaceholder     : "Search timeline"
                 },
                 ajax                  : {
-                    url :"{{route('admin.activity.type.index')}}",
+                    url :"{{route('admin.timeline.index')}}",
                     type : "GET",
 
                 },
@@ -149,7 +194,10 @@
                     },
                     {"data": "title","name":"title"},
                     {"data": "slug", "name": "slug"},
-                    {"data": "total_activity", "name": "total_activity"},
+                    {"data": "start_date", "name": "start_date"},
+                    {"data": "end_date", "name": "end_date"},
+                    {"data": "position", "name": "position"},
+                    {"data": "description", "name": "description"},
                     {
                         data: 'status',
                         name: 'status',
@@ -173,9 +221,21 @@
                     name: {
                         validators: {
                             notEmpty: {
-                                message: 'The type name is required'
+                                message: 'The  timeline title is required'
                             },
                         }
+                    },
+                    from_date: {
+                        validateField: {}
+
+                    },
+                    to_date: {
+                        validateField: {}
+
+                    },
+                    position: {
+                        validateField: {}
+
                     },
                     status: {
                         validateField: {}
@@ -200,12 +260,12 @@
                 },
 
             }).on('core.form.valid', function () {
-                modelId = $("#type_id").val();
+                modelId = $("#timeline_id").val();
                 if (save_method == 'update') {
-                    model_url = "{{route('admin.activity.type.update',':model')}}";
+                    model_url = "{{route('admin.timeline.update',':model')}}";
                     model_url = model_url.replace(":model",modelId);
                 } else {
-                    model_url = "{{route('admin.activity.type.store')}}";
+                    model_url = "{{route('admin.timeline.store')}}";
                 }
                 // get the input values
                 result = new FormData($(form)[0]);
@@ -248,8 +308,8 @@
             //add new menu
             $('body').on('click', '.add-new-model', function () {
                 save_method = "add";
-                $("h5.modal-title").html('Create new activity')
-                $("#type_id").val('');
+                $("h5.modal-title").html('Create new timeline')
+                $("#timeline_id").val('');
                 initTinyMce();
                 $('#add-new-model-modal').modal('show');
             });
@@ -261,9 +321,9 @@
                 //make the save method
                 save_method="update";
                 //need to pouplate the data in the field by fetching the data from the server
-                modelId = $(this).data('type-id');
-                $("#type_id").val(modelId);
-                model_url   = "{{url('/admin/activities/types')}}" + "/" + modelId + "/edit";
+                modelId = $(this).data('timeline-id');
+                $("#timeline_id").val(modelId);
+                model_url   = "{{url('/admin/timelines')}}" + "/" + modelId + "/edit";
                 $.get(model_url ,function(response){
                     //call the function to populate the data
                     if(response.status == "success"){
@@ -280,11 +340,11 @@
             //delete the menu
             $("body").on('click','.delete-btn', function(e){
                 e.preventDefault();
-                modelId=$(this).attr('data-type-id');
-                model_url  = "{{url('/admin/activities/types')}}" + "/" + modelId;
+                modelId=$(this).attr('data-timeline-id');
+                model_url  = "{{url('/admin/timelines')}}" + "/" + modelId;
                 swal({
                     title: "Are you sure?",
-                    text: "You will not be able to recover type!",
+                    text: "You will not be able to recover timeline!",
                     icon: "warning",
                     buttons: {
                         cancel: "Cancel",
@@ -333,6 +393,8 @@
                 $(form)[0].reset();
                 removeUpload();
                 fv.resetForm(true);
+                $("select[name='to_date']").select2()
+                $("select[name='from_date']").select2()
                 tinymce.EditorManager.editors = []; 
                 $("#description").text('');
             });
@@ -357,20 +419,45 @@
         //function to populate the modal data while the modal open in case of the edit menu option
         function populateModalData(response,has_set_menu_image){
             //change the modal heading
-            $("h5.modal-title").html('Update ' + response.type.title + ' model')
+            $("h5.modal-title").html('Update ' + response.timeline.title + ' model')
             //populate the individual field
-            $("#name").val(response.type.title);
+            $("#name").val(response.timeline.title)
+            $("#from_date").val(response.timeline.start_date)
+            $("#to_date").val(response.timeline.to_date)
             //loop through each 
-            var type_status = $("select[name='status'] > option")
-            type_status.each((index,value) =>{
-                if(response.type.status == value.value){
-                    $("select[name='status']").val(response.type.status)
+            var timeline_status = $("select[name='status'] > option")
+            timeline_status.each((index,value) =>{
+                if(response.timeline.status == value.value){
+                    $("select[name='status']").val(response.timeline.status)
+                }
+            })
+
+            var timeline_start_date = $("select[name='from_date'] > option")
+            timeline_start_date.each((index,value) =>{
+                if(response.timeline.start_date === value.value){
+                    $("select[name='from_date']").val(response.timeline.start_date)
+                    $("select[name='from_date']").select2();
+                }
+            })
+
+            var timeline_end_date = $("select[name='to_date'] > option")
+            timeline_end_date.each((index,value) =>{
+                if(response.timeline.end_date === value.value){
+                    $("select[name='to_date']").val(response.timeline.end_date)
+                    $("select[name='to_date']").select2();
+                }
+            })
+
+            var timeline_position = $("select[name='position'] > option")
+            timeline_position.each((index,value) =>{
+                if(response.timeline.position == value.value){
+                    $("select[name='position']").val(response.timeline.position)
                 }
             })
 
             //set the content in the tinymce
-            if(response.type.description != null)
-                tinymce.get('description').setContent(response.type.description);
+            if(response.timeline.description != null)
+                tinymce.get('description').setContent(response.timeline.description);
         }
 
 </script>

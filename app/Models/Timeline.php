@@ -23,8 +23,8 @@ class Timeline extends Model
 		$new_timeline->slug            = isset($data['name']) ? Str::slug($data['name'],'-') : null;
 		$new_timeline->description     = $data['description'] ?? null;
 		$new_timeline->excerpt         = $data['excerpt'] ?? null;
-		$new_timeline->start_date      = $data['start_date'] ?? Carbon::parse(Carbon::now())->format('Y-m-d');
-		$new_timeline->end_date        = $data['end_date'] ?? Carbon::parse(Carbon::now())->format('Y-m-d');
+		$new_timeline->start_date      = isset($data['from_date']) ? date('Y-m-d',strtotime($this->convertStringToDate($data['from_date']))) : null;
+		$new_timeline->end_date        = isset($data['to_date']) ? date('Y-m-d',strtotime($this->convertStringToDate($data['to_date']))) : null;
 		$new_timeline->position        = $data['position'] ?? 'left';
 		$new_timeline->status          = $data['status'] ?? '1';
 		$new_timeline->save();
@@ -43,12 +43,19 @@ class Timeline extends Model
 		$selected_timeline->slug           = isset($data['name']) ? Str::slug($data['name'],'-') : $selected_timeline->slug;
 		$selected_timeline->description    = $data['description'] ?? null;
         $selected_timeline->excerpt        = $data['excerpt'] ?? null;
-		$selected_timeline->start_date     = $data['start_date'] ?? Carbon::parse(Carbon::now())->format('Y-m-d');
-		$selected_timeline->end_date       = $data['end_date'] ?? Carbon::parse(Carbon::now())->format('Y-m-d');
+		$selected_timeline->start_date     = isset($data['from_date']) ? date('Y-m-d',strtotime($this->convertStringToDate($data['from_date']))) : null;
+		$selected_timeline->end_date       = isset($data['to_date']) ? date('Y-m-d',strtotime($this->convertStringToDate($data['to_date']))) : null;
 		$selected_timeline->position       = $data['position'] ?? 'left';
 		$selected_timeline->status         = $data['status'] ?? $selected_timeline->status;
 		$selected_timeline->save();
 		return $selected_timeline;
 
+    }
+
+	protected function convertStringToDate($year){
+        if(isset($year) && $year != ""):
+            //check for the month
+            return $year.'-01-01';
+        endif;
     }
 }
