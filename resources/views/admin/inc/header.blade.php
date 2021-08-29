@@ -117,7 +117,7 @@
                     <ul class="nav-right">
                         <li class="user-profile header-notification">
                             <a href="#!">
-                                <img src="{{asset('admin-assets/images/avatar-4.jpg')}}" class="img-radius" alt="User-Profile-Image">
+                                <img src="{{asset('admin-assets/images/user.png')}}" class="img-radius" alt="User-Profile-Image">
                                 <span>{{--{{ ucwords(Auth::user()->name)}}--}}</span>
                                 <i class="ti-angle-down"></i>
                             </a>

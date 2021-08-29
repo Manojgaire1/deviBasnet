@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('page_title','Activity lists')
+@section('page_title','Timeline lists')
 @section('page_specific_css')
 <link href="{{ asset('/admin-assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
 @endsection
@@ -15,11 +15,11 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-7">
-                                <h2>Activities</h2>
+                                <h2>Types</h2>
                             </div>
                             <div class="col-md-5">
                                 <div class="add-new-vehicle">
-                                    <a href="#" class="btn-green border-radius-30 add-new-make">add New</a>
+                                    <a href="#" class="btn-green border-radius-30 add-new-model">add New</a>
                                 </div>
                             </div>
                         </div>
@@ -27,13 +27,13 @@
                     </div>
                     <div class="card-block">
                     <div class="table-responsive dt-responsive">
-                        <table class="table table-striped table-bordered data-table activity_table">
+                        <table class="table table-striped table-bordered data-table model_table">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Image</th>
                                     <th>Name</th>
-                                    <th>Type</th>
+                                    <th>Slug</th>
+                                    <th>Total Activity</th>
                                     <th>status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -56,37 +56,24 @@
 </div>
 <!-- end single-page -->
 
-<div class="modal fade" id="add-new-make-modal">
-	<div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="add-new-model-modal">
+	<div class="modal-dialog modal-md" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Add New Activity</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Add New Type</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 
-            <form id="activityForm" name="activityForm">
+            <form id="categoryForm" name="category_form">
                 @csrf
 				<div class="modal-body category_add_body">
                      <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="NRNA visit">
-                            </div>
-                            <div class="form-group">
-                                <label>Type</label>
-                                <select name="type" class="form-control">
-                                    <option value="" selected="selected" disabled>Select type</option>
-                                    @foreach($types as $type)
-                                        <option value="{{$type->id}}">{{$type->title}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <lable>Upload documents</label>
-                                <input type="file" name="activity_doc" id="activity_doc" class="form-control"/>
+                                <label for="make_name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Social">
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
@@ -94,28 +81,6 @@
                                     <option value="1" selected="selected">Active</option>
                                     <option value="0">Inactive</option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Upload Image</label>
-                                <div class="file-upload">
-                                    <div class="image-upload-wrap"  style="background: url({{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}});background-size: contain;">
-                                        <img src="{{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}}" class="img-fluid image-preview-single">
-                                        <input class="file-upload-input" type="file" name="activity_image_path" onchange="previewFile(this);" accept="image/*">
-                                        <div class="drag-text">
-                                            <div class="icon">+</div>
-                                        </div>
-                                    </div>
-                                    <div class="file-upload-content">
-                                        <img class="file-upload-image img-fluid" src="#" alt="your image">
-                                        <div class="image-title-wrap">
-                                            <button type="button" onclick="removeUpload()" class="remove-image btn-blue">Remove Image<span class="image-title">Uploaded Image</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="file-upload-btn  btn-blue" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Select Image
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -128,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="activity_id" id="activity_id" value=""/>
+                <input type="hidden" name="type_id" id="type_id" value=""/>
                 <div class="modal-footer">
                     <button type="submit" name="btnSubmit" class="btn btn-green">Save</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -147,22 +112,16 @@
     <script src="https://cdn.tiny.cloud/1/htwjojrmzrtocohmg23pftvkzb8dn907vrzqzfeju23jhzf6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         $(document).ready(function () {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
             //intialize the variables
             var save_method = "add";
-            var make_url;
-            var makeTable;
-            var categoryId;
-            var form = document.getElementById('activityForm');
+            var model_url;
+            var modelTable;
+            var modelId;
+            var form = document.getElementById('categoryForm');
             //intialize the tinymce editor
             initTinyMce();
             //render the data in the datatable based on the fetched results
-            makeTable = $('.activity_table').DataTable({
+            modelTable = $('.model_table').DataTable({
                 dom: 'Blfrtip',
                 buttons: [],
                 order: [[0,'desc']],
@@ -174,10 +133,10 @@
                 processing: true,
                 serverSide: true,
                 language              : {
-                    searchPlaceholder     : "Search activity"
+                    searchPlaceholder     : "Search types"
                 },
                 ajax                  : {
-                    url :"{{route('admin.activity.index')}}",
+                    url :"{{route('admin.activity.type.index')}}",
                     type : "GET",
 
                 },
@@ -188,13 +147,9 @@
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
                     },
-                    {'render'  :function(data, type, JsonResultRow, meta)
-                        {
-                            return "<img src='"+ JsonResultRow.image_path + "' height='50px' width='100px'>";
-                        }
-                    },
-                    {"data": "activity_title", "name": "activities.title"},
-                    {"data": "title", "name": "types.title"},
+                    {"data": "title","name":"title"},
+                    {"data": "slug", "name": "slug"},
+                    {"data": "total_activity", "name": "total_activity"},
                     {
                         data: 'status',
                         name: 'status',
@@ -218,7 +173,7 @@
                     name: {
                         validators: {
                             notEmpty: {
-                                message: 'The activity name is required'
+                                message: 'The type name is required'
                             },
                         }
                     },
@@ -226,36 +181,9 @@
                         validateField: {}
 
                     },
-                    type: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The activity type is required'
-                            },
-                        }
-
-                    },
                     description: {
                         validateField: {}
                     },
-                    activity_image_path: {
-                        validators: {
-                            file: {
-                                extension: 'jpeg,jpg,png',
-                                type: 'image/jpeg,image/png',
-                                maxSize: 2097152,   // 2048 * 1024
-                                message: 'You cannot upload the image that is greater than 2MB size'
-                            }
-                        }
-                    },
-                    activity_doc: {
-                        validators: {
-                            file: {
-                                extension: 'doc,pdf',
-                                type: 'application/msword,application/pdf',
-                                message: 'You can upload only doc and pdf and image'
-                            }
-                        }
-                    }
                 },
                 plugins: {
                     trigger: new FormValidation.plugins.Trigger(),
@@ -272,33 +200,32 @@
                 },
 
             }).on('core.form.valid', function () {
-                makeId = $("#activity_id").val();
+                modelId = $("#type_id").val();
                 if (save_method == 'update') {
-                    make_url = "{{route('admin.activity.update',':make')}}";
-                    make_url = make_url.replace(":make",makeId);
+                    model_url = "{{route('admin.activity.type.update',':model')}}";
+                    model_url = model_url.replace(":model",modelId);
                 } else {
-                    make_url = "{{route('admin.activity.store')}}";
+                    model_url = "{{route('admin.activity.type.store')}}";
                 }
                 // get the input values
-                result = new FormData($("#activityForm")[0]);
+                result = new FormData($(form)[0]);
                 $.ajax({
-                    url: make_url,
-                    data:result,
+                    url: model_url,
+                    data: result,
                     dataType: "Json",
                     contentType: false,
                     processData: false,
-                    cache:false,
                     type: "POST",
                     success: function (data) {
                         if(data.status == "success"){
-                            $('#add-new-make-modal').modal('hide');
+                            $('#add-new-model-modal').modal('hide');
                             swal({
                                 title: data.title,
                                 text: data.message,
                                 icon: "success",
                                 button: "OK",
                             }).then(function () {
-                                makeTable.ajax.reload();
+                                modelTable.ajax.reload();
                             });
                         }else{
                             swal({
@@ -312,19 +239,19 @@
                     },
                     error: function (jqXHR,textStatus,errorThrown) {
                         if(jqXHR.status == 500){
-                            console.log('There is server error adding the new menu, please try again');
+                            console.log('There is server error updating the model, please try again');
                         }
                     }
 
                 });
             });
             //add new menu
-            $('body').on('click', '.add-new-make', function () {
+            $('body').on('click', '.add-new-model', function () {
                 save_method = "add";
                 $("h5.modal-title").html('Create new activity')
-                $("#activity_id").val('');
+                $("#type_id").val('');
                 initTinyMce();
-                $('#add-new-make-modal').modal('show');
+                $('#add-new-model-modal').modal('show');
             });
 
             //edit menu button click
@@ -334,36 +261,30 @@
                 //make the save method
                 save_method="update";
                 //need to pouplate the data in the field by fetching the data from the server
-                makeId = $(this).data('activity-id');
-                $("#activity_id").val(makeId);
-                menu_url   = "{{url('/admin/activities/')}}" + "/" + makeId + "/edit";
-                $.get(menu_url ,function(response){
+                modelId = $(this).data('type-id');
+                $("#type_id").val(modelId);
+                model_url   = "{{url('/admin/activities/types')}}" + "/" + modelId + "/edit";
+                $.get(model_url ,function(response){
                     //call the function to populate the data
                     if(response.status == "success"){
                         initTinyMce();
                         populateModalData(response);
-                        $("#add-new-make-modal").modal('show');
+                        $("#add-new-model-modal").modal('show');
                     }else{
                         //show the swal message
-                        swal('Not found!!', 'Menu not found in the server', 'error');
+                        swal('Not found!!', 'Model not found in the server', 'error');
                     }
                 });
             });
 
-            //reset the validation when the image was removed
-            $('body').on('click','.remove-image',function(e){
-                e.preventDefault();
-                //reset the form validation field
-                fv.resetField('make_image_path');
-            });
             //delete the menu
             $("body").on('click','.delete-btn', function(e){
                 e.preventDefault();
-                makeId=$(this).attr('data-activity-id');
-                make_url  = "{{url('/admin/activities/')}}" + "/" + makeId;
+                modelId=$(this).attr('data-type-id');
+                model_url  = "{{url('/admin/activities/types')}}" + "/" + modelId;
                 swal({
                     title: "Are you sure?",
-                    text: "You will not be able to recover activity!",
+                    text: "You will not be able to recover type!",
                     icon: "warning",
                     buttons: {
                         cancel: "Cancel",
@@ -381,7 +302,7 @@
                 }).then(function (isConfirm) {
                     if (isConfirm) {
                         $.ajax({
-                            url: make_url,
+                            url: model_url,
                             type: "DELETE",
                             dataType: "Json",
                             context:this,
@@ -389,7 +310,7 @@
                             success: function (data) {
                                 if (data.status == "success") {
                                     swal(data.title, data.message, "success").then(function () {
-                                        makeTable.ajax.reload();
+                                        modelTable.ajax.reload();
 
                                     });
                                 } else {
@@ -414,7 +335,6 @@
                 fv.resetForm(true);
                 tinymce.EditorManager.editors = []; 
                 $("#description").text('');
-                showDefaultImage();
             });
             $.fn.dataTable.ext.errMode = 'none';
         });
@@ -437,38 +357,20 @@
         //function to populate the modal data while the modal open in case of the edit menu option
         function populateModalData(response,has_set_menu_image){
             //change the modal heading
-            $("h5.modal-title").html('Update ' + response.activity.title + ' make')
+            $("h5.modal-title").html('Update ' + response.type.title + ' model')
             //populate the individual field
-            $("#name").val(response.activity.title);
+            $("#name").val(response.type.title);
             //loop through each 
-            var activity_status = $("select[name='status'] > option")
-            activity_status.each((index,value) =>{
-                if(response.activity.status == value.value){
-                    $("select[name='status']").val(response.activity.status)
-                }
-            })
-
-            var activity_type = $("select[name='type'] > option")
-            activity_type.each((index,value) =>{
-                if(response.activity.type_id == value.value){
-                    $("select[name='type']").val(response.activity.type_id)
+            var type_status = $("select[name='status'] > option")
+            type_status.each((index,value) =>{
+                if(response.type.status == value.value){
+                    $("select[name='status']").val(response.type.status)
                 }
             })
 
             //set the content in the tinymce
-            if(response.activity.description != null)
-                tinymce.get('description').setContent(response.activity.description);
-            //set the if provided
-            if(response.activity.featured_image != null){
-                var image_directory = "{{asset('/uploads/activities/large')}}";
-                $(".image-preview-single").attr('src',image_directory + "/" + response.activity.featured_image);
-            }
-        }
-
-
-        function showDefaultImage(){
-            var default_image_path = "{{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}}";
-            $('.image-preview-single').attr('src',default_image_path);
+            if(response.type.description != null)
+                tinymce.get('description').setContent(response.type.description);
         }
 
 </script>

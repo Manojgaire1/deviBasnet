@@ -24,17 +24,18 @@ class TypeController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()):
-            $zen_types = Type::orderBy('id','desc');
-            return Datatables($zen_types)
-            ->addColumn('action', function ($zen_type) {
-
+            $types = Type::orderBy('id','desc');
+            return Datatables($types)
+            ->addColumn('total_activity',function($type){
+                return $type->activities()->count();
+            })
+            ->addColumn('action', function ($type) {
                 $return_html = '<div class="dropdown">' .
-
                     '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-more-alt"></i></button>' .
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >' .
                     '<ul>' .
-                    '<li><button class="dropdown-item edit-btn" data-type-id = "'.$zen_type->id.'" href = "#" > Edit</button ></li >'.
-                    '<li ><a class="dropdown-item delete-btn" href = "#" data-type-id = '.$zen_type->id.' > Delete</a ></li >'.
+                    '<li><button class="dropdown-item edit-btn" data-type-id = "'.$type->id.'" href = "#" > Edit</button ></li >'.
+                    '<li ><a class="dropdown-item delete-btn" href = "#" data-type-id = '.$type->id.' > Delete</a ></li >'.
                     '</ul >'.
                     '</div ></div >';
                 return $return_html;
@@ -97,7 +98,7 @@ class TypeController extends Controller
         //
         $this->selectedType = $this->type::findOrFail($id);
         if($this->selectedType):
-            return response()->json(array('status' => 'success', 'Type' => $this->selectedType,'message' => 'Type has been fetched successfully!'),200);
+            return response()->json(array('status' => 'success', 'type' => $this->selectedType,'message' => 'Type has been fetched successfully!'),200);
         else:
             return response()->json(array('status' => 'failed','message' => 'Type does not exist in the server'),404);
         endif;
@@ -137,29 +138,19 @@ class TypeController extends Controller
         //
         $this->selectedType = $this->type->where('id',$id)->first();
         if($this->selectedType):
-            //check the category have foods or not
-            if($this->selectedType->vehicles()->count() > 0):
-                return response()->json(array('status' => 'failed','message' => 'Type cannot be deleted because it have vehicles on it, delete the vehicle first','title' => 'Deletion failed!'),200);
+            //check the types have activity or not
+            if($this->selectedType->activities()->count() > 0):
+                return response()->json(array('status' => 'failed', 'message' => 'Type cannot be deleted, because it has activity','title' => 'Deletion failed!'),200);
             else:
-                //remove the old images
-                $make_image = $this->selectedType->image;
                 if($this->selectedType->destroy($id)):
-                    if($make_image != null):
-                        //remove the old images
-                        $this->removeImages($this->upload_image_dir,$make_image);
-                    endif;
                     // send the response back to the client with the success message
-                    return response()->json(array('status' => 'success', 'message' => 'Type has been deleted successfully','title' => 'Make deleted!'),200);
+                    return response()->json(array('status' => 'success', 'message' => 'Type has been deleted successfully','title' => 'Type deleted!'),200);
                 else:
                     //send the failed  message to teh client that the menu cannot be deleted
                     return response()->json(array('status' => 'failed', 'message' => 'Type cannot be deleted, please try again','title' => 'Deletion failed!'),200);
                 endif;
-
             endif;
-
-        else:
             return response()->json(array('status' => 'failed','message' => 'Type does not exists, please try again'),404);
-
         endif;
     }
 }

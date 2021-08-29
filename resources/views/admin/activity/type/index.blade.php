@@ -15,7 +15,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-7">
-                                <h2>Models</h2>
+                                <h2>Types</h2>
                             </div>
                             <div class="col-md-5">
                                 <div class="add-new-vehicle">
@@ -32,9 +32,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Make</th>
-                                    <th>Total cars</th>
-                                    <th>Description</th>
+                                    <th>Slug</th>
+                                    <th>Total Activity</th>
                                     <th>status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -61,7 +60,7 @@
 	<div class="modal-dialog modal-md" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Add New Model</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Add New Type</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -74,7 +73,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="make_name">Name</label>
-                                <input type="text" class="form-control" name="model_name" id="model_name" placeholder="Passo">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Social">
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
@@ -94,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="model_id" id="model_id" value=""/>
+                <input type="hidden" name="type_id" id="type_id" value=""/>
                 <div class="modal-footer">
                     <button type="submit" name="btnSubmit" class="btn btn-green">Save</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -148,15 +147,9 @@
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
                     },
-                    {"data": "name","name":"name"},
-                    {"data": "make.name", "name": "make.name"},
-                    {"data": "total_vehicles", "name": "total_vehicles"},
-                    {"data": "description",
-                        render:function(data,type,full,meta){
-                            return data;
-                        },
-                     "name": "description"
-                    },
+                    {"data": "title","name":"title"},
+                    {"data": "slug", "name": "slug"},
+                    {"data": "total_activity", "name": "total_activity"},
                     {
                         data: 'status',
                         name: 'status',
@@ -177,7 +170,7 @@
             form,
             {
                 fields: {
-                    model_name: {
+                    name: {
                         validators: {
                             notEmpty: {
                                 message: 'The type name is required'
@@ -207,7 +200,7 @@
                 },
 
             }).on('core.form.valid', function () {
-                modelId = $("#model_id").val();
+                modelId = $("#type_id").val();
                 if (save_method == 'update') {
                     model_url = "{{route('admin.activity.type.update',':model')}}";
                     model_url = model_url.replace(":model",modelId);
@@ -255,8 +248,8 @@
             //add new menu
             $('body').on('click', '.add-new-model', function () {
                 save_method = "add";
-                $("h5.modal-title").html('Create new model')
-                $("#model_id").val('');
+                $("h5.modal-title").html('Create new activity')
+                $("#type_id").val('');
                 initTinyMce();
                 $('#add-new-model-modal').modal('show');
             });
@@ -266,11 +259,11 @@
                 //prevent the default action
                 e.preventDefault();
                 //make the save method
-                save_method="udpate";
+                save_method="update";
                 //need to pouplate the data in the field by fetching the data from the server
-                modelId = $(this).data('model-id');
-                $("#model_id").val(modelId);
-                model_url   = "{{url('/admin/models/')}}" + "/" + modelId + "/edit";
+                modelId = $(this).data('type-id');
+                $("#type_id").val(modelId);
+                model_url   = "{{url('/admin/activities/types')}}" + "/" + modelId + "/edit";
                 $.get(model_url ,function(response){
                     //call the function to populate the data
                     if(response.status == "success"){
@@ -287,11 +280,11 @@
             //delete the menu
             $("body").on('click','.delete-btn', function(e){
                 e.preventDefault();
-                modelId=$(this).attr('data-model-id');
-                model_url  = "{{url('/admin/models/')}}" + "/" + modelId;
+                modelId=$(this).attr('data-type-id');
+                model_url  = "{{url('/admin/activities/types')}}" + "/" + modelId;
                 swal({
                     title: "Are you sure?",
-                    text: "You will not be able to recover model!",
+                    text: "You will not be able to recover type!",
                     icon: "warning",
                     buttons: {
                         cancel: "Cancel",
@@ -364,32 +357,20 @@
         //function to populate the modal data while the modal open in case of the edit menu option
         function populateModalData(response,has_set_menu_image){
             //change the modal heading
-            $("h5.modal-title").html('Update ' + response.model.name + ' model')
+            $("h5.modal-title").html('Update ' + response.type.title + ' model')
             //populate the individual field
-            $("#model_name").val(response.model.name);
+            $("#name").val(response.type.title);
             //loop through each 
-            var model_status = $("select[name='status'] > option")
-            model_status.each((index,value) =>{
-                if(response.model.status == value.value){
-                    $("select[name='status']").val(response.model.status)
-                }
-            })
-
-            var model_make = $("select[name='make'] > option")
-            model_make.each((index,value) =>{
-                if(response.model.make_id == value.value){
-                    $("select[name='make']").val(response.model.make_id)
+            var type_status = $("select[name='status'] > option")
+            type_status.each((index,value) =>{
+                if(response.type.status == value.value){
+                    $("select[name='status']").val(response.type.status)
                 }
             })
 
             //set the content in the tinymce
-            if(response.model.description != null)
-                tinymce.get('description').setContent(response.model.description);
-            //set the if provided
-            if(response.model.image != null){
-                var image_directory = "{{asset('/uploads/makes/large')}}";
-                $(".image-preview-single").attr('src',image_directory + "/" + response.model.image);
-            }
+            if(response.type.description != null)
+                tinymce.get('description').setContent(response.type.description);
         }
 
 </script>

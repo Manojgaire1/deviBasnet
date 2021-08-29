@@ -19414,11 +19414,11 @@ body[themebg-pattern="pattern3"] {
 
 }
 
-body[themebg-pattern="pattern4"] {
+/* body[themebg-pattern="pattern4"] {
 
   background-image: url("../images/pattern4.jpg");
 
-}
+} */
 
 body[themebg-pattern="pattern5"] {
 

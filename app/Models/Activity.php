@@ -29,8 +29,8 @@ class Activity extends Model
 		$selected_activity->slug            = isset($data['name']) ? Str::slug($data['name'],'-') : $selected_activity->slug;
 		$selected_activity->description     = $data['description'] ?? null;
 		$selected_activity->status          = $data['status'] ?? $selected_activity->status;
-		$selected_activity->featured_image  = $data['image_path'] ?? null;
-		$selected_activity->documents_path  = $data['activitiy_doc'] ?? null;
+		$selected_activity->featured_image  = $data['image_path'] ?? $selected_activity->featured_image;
+		$selected_activity->documents_path  = $data['activitiy_doc'] ?? $selected_activity->documents_path;
 		$selected_activity->save();
 		return $selected_activity;
 	}

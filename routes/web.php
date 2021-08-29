@@ -42,13 +42,15 @@ Route::group(['prefix' => '/admin'],function(){
         Route::get('',[ActivityController::class,'index'])->name('admin.activity.index');
         Route::get('/{activityId}/edit',[ActivityController::class,'edit'])->name('admin.activity.edit');
         Route::post('/newActivity',[ActivityController::class,'store'])->name('admin.activity.store');
-        Route::post('/{id}',[ActivityController::class,'udpate'])->name('admin.activity.update');
+        Route::post('/{id}',[ActivityController::class,'update'])->name('admin.activity.update');
+        Route::delete('/{id}',[ActivityController::class,'destroy'])->name('admin.activity.destroy');
         //activity type
         Route::group(['prefix' => '/types'],function(){
             Route::get('',[TypeController::class,'index'])->name('admin.activity.type.index');
             Route::post('/newType',[TypeController::class,'store'])->name('admin.activity.type.store');
             Route::get('/{typeId}/edit',[TypeController::class,'edit'])->name('admin.activity.type.edit');
             Route::post('/{id}',[TypeController::class,'update'])->name('admin.activity.type.update');
+            Route::delete('/{id}',[TypeController::class,'destroy'])->name('admin.activity.type.destroy');
         });
     });
 });

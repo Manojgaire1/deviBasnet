@@ -23,7 +23,7 @@ class AdminBaseController extends Controller
         // //only resize if thumbnail is required
         if ($thumbnail):
         //create the image thumbnail using the intervention image package
-            $this->generateDifferentSizeImages($image,$name,$height,$width,$path."/thumbnails");
+            $this->generateDifferentSizeImages($image,$name,$height,$width,$path."/small");
             $this->generateDifferentSizeImages($image,$name,'500','500',$path."/large");
         endif;
         //save the large image in the file system
@@ -71,8 +71,8 @@ class AdminBaseController extends Controller
         }
 
         //remove the thumbnails
-        if(File::exists($directory_path.'/thumbnails/'.$image)){
-            File::delete($directory_path .'/thumbnails/'. $image);
+        if(File::exists($directory_path.'/small/'.$image)){
+            File::delete($directory_path .'/small/'. $image);
         }
         //remove the large images
         if(File::exists($directory_path.'/large/'.$image)){
