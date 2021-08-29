@@ -40,11 +40,11 @@
                 </div>
                 <div class="col-12 col-sm-6 social">
                     <p class="pull-right">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/drbasnetdevi/" target="_blank"><i class="fa fa-facebook"></i></a>
                         <!-- <a href="#"><i class="fa fa-google"></i></a> -->
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <!-- <a href="#"><i class="fa fa-tumblr"></i></a> -->
-                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/drdevibasnet/" target="_blank"><i class="fa fa-instagram"></i></a>
                         <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
                     </p>
                 </div>
