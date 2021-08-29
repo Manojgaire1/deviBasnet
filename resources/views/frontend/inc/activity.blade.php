@@ -8,7 +8,6 @@
         <div class="container">
             @if($types->count() > 0)
             <div id="filters-group">
-                <a class="filter" data-filter="*">show all</a>
                 @foreach($types as $type)
                     <a class="filter" data-filter=".{{$type->slug}}">{{$type->title}}</a>
                 @endforeach
