@@ -20,7 +20,7 @@
                         <div class="box">
                             <div class="circle"><i class="fa fa-cogs"></i></div>
                             <h3>Yoga Medititation</h3>
-                            <p>For the healthy body and mind yoga and meditation play an improtant role. As being health is the wealth i meditiate daily.</p>
+                            <p>For the healthy body and mind yoga and meditation play an improtant role. Do regular yoga for healthier life.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">

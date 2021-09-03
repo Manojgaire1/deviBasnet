@@ -22004,7 +22004,7 @@ body .pcoded[vertical-nav-type="compact"] .main-menu .mCSB_container_wrapper {
 
 body.menu-bottom .navbar-wrapper {
 
-  .z-index: 1050;
+  z-index: 1050;
 
 }
 
