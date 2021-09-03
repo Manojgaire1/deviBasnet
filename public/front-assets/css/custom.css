@@ -1155,9 +1155,6 @@ section#about #aboutRight ul{
     margin-bottom: 5px;
 }
 
-#contact [class*="col-"] div {
-    text-align: left;
-}
 @media(max-width: 767px) {
     .jumbotron {
         background-position: 100% 0% !important;
