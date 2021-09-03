@@ -1143,3 +1143,29 @@ section#about #aboutRight ul{
     line-height: 1.8em;
     color: #666;
 }
+
+/*code added by ram on 2021-09-03 */
+@media(max-width: 767px) {
+    .jumbotron {
+        background-position: 100% 0% !important;
+    }
+    
+    .timeline-block-left ul,
+    .timeline-block-right ul {
+        text-align: left;
+    }
+    .timeline-block-left ul li,
+    .timeline-block-right ul li {
+        margin-bottom: 5px;
+    }
+    #contact [class*="col-"] div {
+        text-align: left;
+    }
+  }
+  
+  @media(min-width: 1200px) {
+    div#portfolio-items [class*="col-"] {
+        max-width: 16.6667%;
+        flex: 0 0 1606667%;
+    }
+  }
