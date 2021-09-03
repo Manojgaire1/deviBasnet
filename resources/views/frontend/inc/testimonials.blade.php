@@ -12,30 +12,24 @@
                         <div class="testimonial">
                             <img class="testimonial-avatar"
                                  src="{{asset('front-assets/img/client1.jpg')}}" alt="">
-                            <q class="testimonial-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                                mauris
-                                ex, gravida ut leo eu, rhoncus porta orci. Fusce vitae rutrum nulla.</q>
-                            <span class="testimonial-author">Joe Smith, CEO</span>
+                            <q class="testimonial-quote">We wish Devi Basnet (PHD) all the best for the coming election.</q>
+                            <span class="testimonial-author"></span>
                         </div>
                     </div>
                     <div class="gallery-cell">
                         <div class="testimonial">
                             <img class="testimonial-avatar"
                                  src="{{asset('front-assets/img/client2.jpg')}}" alt="">
-                            <q class="testimonial-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                                mauris
-                                ex, gravida ut leo eu, rhoncus porta orci. Fusce vitae rutrum nulla.</q>
-                            <span class="testimonial-author">Lisa Jones, Designer</span>
+                            <q class="testimonial-quote">We wish Devi Basnet (PHD) all the best for the coming election.</q>
+                            <span class="testimonial-author"></span>
                         </div>
                     </div>
                     <div class="gallery-cell">
                         <div class="testimonial">
                             <img class="testimonial-avatar"
                                  src="{{asset('front-assets/img/client3.jpg')}}" alt="">
-                            <q class="testimonial-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                                mauris
-                                ex, gravida ut leo eu, rhoncus porta orci. Fusce vitae rutrum nulla.</q>
-                            <span class="testimonial-author">Ryan Waltz, Developer</span>
+                            <q class="testimonial-quote">We wish Devi Basnet (PHD) all the best for the coming election.</q>
+                            <span class="testimonial-author"></span>
                         </div>
                     </div>
                 </div>
