@@ -4,7 +4,7 @@
             <div class="col-12">
                 <h2 class="animation" data-animation="fadeInLeft">NRNA election 2021</h2>
                 <h4 class="animation" data-animation="fadeInLeft">Preparing for election</h4>
-                <a data-animation="fadeInRight" class="btn btn-primary scroll-link animation" href="https://nrna.org" target="_blank">View 
+                <a data-animation="fadeInRight" class="btn btn-primary animation" href="https://nrna.org" target="_blank">View 
                     more!</a>
             </div>
         </div>
