@@ -16,17 +16,15 @@
             @if($activities->count() > 0)
             <div id="portfolio-items" class="row">
                 @foreach($activities as $activity)
-                <div class="item @if($activity->slug == 'social'){{'col-md-6 col-lg-4'}}@else{{'col-md-4 col-lg-2'}}@endif">
-                    <div class="item {{$activity->slug}}" data-category="{{$activity->slug}}"> 
-                        <a title="{!! $activity->description !!}"
-                        data-rel="prettyPhoto"
-                        href="{{asset('uploads/activities/'.$activity->featured_image)}}">
-                            <div class="item-wrap">
-                                <img class="img-fluid" src="{{asset('uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
-                            </div>
-                            <span class="magnifier"></span>
-                        </a>
-                    </div>
+                <div class="item @if($activity->slug == 'social'){{'col-md-6 col-lg-4'}}@else{{'col-md-6 col-lg-4'}}@endif {{$activity->slug}}" data-category="{{$activity->slug}}">
+                    <a title="{!! $activity->description !!}"
+                       data-rel="prettyPhoto"
+                       href="{{asset('uploads/activities/'.$activity->featured_image)}}">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="{{asset('uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
                 </div>
                 @endforeach
             </div>
