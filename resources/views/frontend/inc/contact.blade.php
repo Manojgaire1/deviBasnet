@@ -7,19 +7,25 @@
             </div>
         </div>
         <div class="container">
-            <!-- <div id="form-messages"></div>
-            <div class="form-wrap"> -->
-            <div class="col-12 col-md-12">
+            <div class="row">
+                <div class="col-md-4">
                     <div>
                         <i class="fa fa-map-marker"> </i>Suwon, South Korea 
                     </div>
+                </div>
+                <div class="col-md-4">
                     <div>
                         <i class="fa fa-phone"> </i>+82 10-2343-4725
                     </div>
+                </div>
+                <div class="col-md-4">
                     <div>
                         <i class="fa fa-envelope"> </i>contact@devibasnet.com
                     </div>
+                </div>
             </div>
+            <!-- <div id="form-messages"></div>
+            <div class="form-wrap"> -->
                 <!-- <form id="contact-form" action="api/contact.php" method="post" autocomplete="off">
                     <div class="row">
                         <div class="col-12 col-sm-6">
