@@ -1164,7 +1164,7 @@ section#about #aboutRight ul{
   }
   
   @media(min-width: 1200px) {
-    div#portfolio-items [class*="col-"] {
+    div#portfolio-items .research-and-devopment{
         max-width: 16.6667%;
         flex: 0 0 1606667%;
     }
