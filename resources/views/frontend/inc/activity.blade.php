@@ -16,7 +16,7 @@
             @if($activities->count() > 0)
             <div id="portfolio-items" class="row">
                 @foreach($activities as $activity)
-                <div class="item @if($activity->slug == 'social'){{'col-md-4 col-lg-4'}}@else{{'col-md-4 col-lg-2'}}@endif {{$activity->slug}}" data-category="{{$activity->slug}}">
+                <div class="item @if($activity->slug == 'social'){{'col-md-4 col-lg-2'}}@else{{'col-md-4 col-lg-2'}}@endif {{$activity->slug}}" data-category="{{$activity->slug}}">
                     <a title="{!! $activity->description !!}"
                        data-rel="prettyPhoto"
                        href="{{asset('uploads/activities/'.$activity->featured_image)}}">
