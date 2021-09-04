@@ -11,7 +11,7 @@
                     <div class="gallery-cell">
                         <div class="testimonial">
                             <img class="testimonial-avatar"
-                                 src="{{asset('front-assets/img/client1.jpg')}}" alt="">
+                                 src="{{asset('front-assets/img/client.png')}}" alt="">
                             <q class="testimonial-quote">We wish Devi Basnet (PHD) all the best for the coming election.</q>
                             <span class="testimonial-author"></span>
                         </div>
@@ -19,7 +19,7 @@
                     <div class="gallery-cell">
                         <div class="testimonial">
                             <img class="testimonial-avatar"
-                                 src="{{asset('front-assets/img/client2.jpg')}}" alt="">
+                                 src="{{asset('front-assets/img/client.png')}}" alt="">
                             <q class="testimonial-quote">We wish Devi Basnet (PHD) all the best for the coming election.</q>
                             <span class="testimonial-author"></span>
                         </div>
@@ -27,7 +27,7 @@
                     <div class="gallery-cell">
                         <div class="testimonial">
                             <img class="testimonial-avatar"
-                                 src="{{asset('front-assets/img/client3.jpg')}}" alt="">
+                                 src="{{asset('front-assets/img/client.png')}}" alt="">
                             <q class="testimonial-quote">We wish Devi Basnet (PHD) all the best for the coming election.</q>
                             <span class="testimonial-author"></span>
                         </div>
