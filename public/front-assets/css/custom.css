@@ -28,7 +28,6 @@ html {
 body {
     font-family: 'Roboto Condensed', sans-serif;
     background: #fff;
-    color: #0404a9;
 }
 
 .animation {
@@ -487,7 +486,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 
 .arrow:hover, .arrow:focus, .arrow:active {
     text-decoration: none;
-    color: #0404a9;
+    color: #000;
     font-size: 2.5rem;
 }
 
@@ -579,7 +578,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 }
 
 #services h2 {
-    color: #0404a9;
+    color: #333;
 }
 
 #services i {
