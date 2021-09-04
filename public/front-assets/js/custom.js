@@ -135,7 +135,9 @@
                 masonry: {
                     columnWidth: '.item'
                 }
+                
             });
+            
             if (!isMobile) {
                 var footerParaHeight = footerWrap.height();
                 contentWrap.css("margin-bottom", footerParaHeight);
@@ -222,9 +224,10 @@
     /******************************************************************************************************************/
     /** DEBOUNCED RESIZE                                                                                              */
     /******************************************************************************************************************/
-    $window.on("debouncedresize", function (event) {
-        portfolioItems.isotope();
-    });
+    // $window.on("debouncedresize", function (event) {
+    //     portfolioItems.isotope();
+    // });
+    // portfolioItems.isotope('reLayout');
 
 
     /******************************************************************************************************************/
