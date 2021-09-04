@@ -34,24 +34,6 @@
                     </p>
                     <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more...</a>
                 </div>
-                <div class="col-12 col-lg-4 item">
-                    <img src="{{asset('front-assets/img/blog/blog3.png')}}" class="img-fluid" alt="corona-discussion"/>
-                    <h4>Corona discussion</h4>
-
-                    <p>
-                        What is Covid-19 and how South Korea is becoming success for the control of Covid? I have share my knowlege in the program organized by Nepal Research and Education Network.
-                    </p>
-                    <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more...</a>
-                </div>
-                <div class="col-12 col-lg-4 item">
-                    <img src="{{asset('front-assets/img/blog/blog3.png')}}" class="img-fluid" alt="corona-discussion"/>
-                    <h4>Corona discussion</h4>
-
-                    <p>
-                        What is Covid-19 and how South Korea is becoming success for the control of Covid? I have share my knowlege in the program organized by Nepal Research and Education Network.
-                    </p>
-                    <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more...</a>
-                </div>
             </div>
         </div>
     </section>
