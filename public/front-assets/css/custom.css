@@ -863,7 +863,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 /******************************************************************************************************************/
 
 #testimonials {
-    background: url(../img/testimonials-bg.jpg) repeat-y;
+    background: url(../img/testimonials-bg.png) repeat-y;
     background-size: cover;
     background-color: #000;
     text-align: center;
