@@ -28,6 +28,7 @@ html {
 body {
     font-family: 'Roboto Condensed', sans-serif;
     background: #fff;
+    color: #0404a9;
 }
 
 .animation {
@@ -337,15 +338,15 @@ nav a.nav-link:active, nav a.nav-link:focus {
 }
 
 .jumbotron .btn-primary {
-    background: #000;
-    border: 1px solid #000;
+    background: #0404a9;
+    border: 1px solid #0404a9;
     color: #fff;
 }
 
 .jumbotron .btn-primary:hover {
     background: #fff;
-    border: 1px solid #000;
-    color: #000;
+    border: 1px solid #0404a9;
+    color: #0404a9;
 }
 
 
@@ -486,7 +487,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 
 .arrow:hover, .arrow:focus, .arrow:active {
     text-decoration: none;
-    color: #000;
+    color: #0404a9;
     font-size: 2.5rem;
 }
 
@@ -507,7 +508,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 }
 
 #about h2 {
-    color: #999;
+    color: #0404a9;
 }
 
 #about p {
@@ -578,7 +579,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 }
 
 #services h2 {
-    color: #333;
+    color: #0404a9;
 }
 
 #services i {
