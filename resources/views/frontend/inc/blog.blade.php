@@ -14,7 +14,7 @@
                     <p>
                        My opinion regarding the previous and future planning of NRNA with Kapil Poudel on Nagarik Dainiki.
                     </p>
-                    <a href="https://www.facebook.com/Nayadainiki/videos/2819299258400747" class="btn btn-secondary" target="_blank">Read more...</a>
+                    <a href="https://www.facebook.com/Nayadainiki/videos/2819299258400747" class="btn btn-secondary" target="_blank">Read more</a>
                 </div>
                 <div class="col-12 col-lg-4 item">
                     <img src="{{asset('front-assets/img/blog/blog2.jpg')}}" class="img-fluid" alt=""/>
@@ -23,7 +23,7 @@
                     <p>
                         Disccussion regarding the oppurtunites of Nepalese people in South Korea on 'Samaya Sambad' with Sabina Karki.
                     </p>
-                    <a href="https://www.facebook.com/100237805005782/videos/621349325410984/" class="btn btn-secondary" target="_blank">Read more...</a>
+                    <a href="https://www.facebook.com/100237805005782/videos/621349325410984/" class="btn btn-secondary" target="_blank">Read more</a>
                 </div>
                 <div class="col-12 col-lg-4 item">
                     <img src="{{asset('front-assets/img/blog/blog3.png')}}" class="img-fluid" alt="corona-discussion"/>
@@ -32,7 +32,7 @@
                     <p>
                         What is Covid-19 and how South Korea is becoming success for the control of Covid? It was organized by Nepal Research and Education Network.
                     </p>
-                    <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more...</a>
+                    <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more</a>
                 </div>
                 <div class="col-12 col-lg-4 item">
                     <img src="{{asset('front-assets/img/blog/blog4.png')}}" class="img-fluid" alt="corona-discussion"/>
@@ -41,7 +41,7 @@
                     <p>
                         ICC Representative of NRN, south korea. Dr. Devi Basnet(me) speaking on the occasion of seminar.
                     </p>
-                    <a href="https://www.youtube.com/watch?v=S0Pw5xevjp8" class="btn btn-secondary" target="_blank">Read more...</a>
+                    <a href="https://www.youtube.com/watch?v=S0Pw5xevjp8" class="btn btn-secondary" target="_blank">Read more</a>
                 </div>
                 <div class="col-12 col-lg-4 item">
                     <img src="{{asset('front-assets/img/blog/blog5.png')}}" class="img-fluid" alt="corona-discussion"/>
@@ -50,7 +50,7 @@
                     <p>
                         My small interview regarding my journey to NRNA along with why my candidacy for NRNA secetary.
                     </p>
-                    <a href="https://www.youtube.com/watch?v=goScwv2edl4" class="btn btn-secondary" target="_blank">Read more...</a>
+                    <a href="https://www.youtube.com/watch?v=goScwv2edl4" class="btn btn-secondary" target="_blank">Read more</a>
                 </div>
             </div>
         </div>
