@@ -778,6 +778,10 @@ nav a.nav-link:active, nav a.nav-link:focus {
     z-index: 1
 }
 
+#experience h2, #services h2,#portfolio h2,#blog h2{
+    color: #0404a9;
+}
+
 .timeline-block {
     width: -webkit-calc(50% + 8px);
     width: -moz-calc(50% + 8px);
@@ -819,7 +823,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
 .timeline-content {
     width: 95%;
     padding: 0 15px;
-    color: #666
+    color: #000
 }
 
 .timeline-content h3 {
@@ -827,19 +831,19 @@ nav a.nav-link:active, nav a.nav-link:focus {
 	margin-bottom: 0;
 	padding-bottom: 0;
 	font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .timeline-content span {
     font-size: 15px;
-    color: #a4a4a4;
+    color: #000;
 }
 
 .timeline-content p {
     font-size: 14px;
     line-height: 1.5;
     word-spacing: 1px;
-    color: #888;
+    color: #000;
 }
 
 
