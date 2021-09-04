@@ -41,7 +41,16 @@
                     <p>
                         ICC Representative of NRN, south korea. Dr. Devi Basnet(me) speaking on the occasion of seminar.
                     </p>
-                    <a href=https://www.youtube.com/watch?v=S0Pw5xevjp8" class="btn btn-secondary" target="_blank">Read more...</a>
+                    <a href="https://www.youtube.com/watch?v=S0Pw5xevjp8" class="btn btn-secondary" target="_blank">Read more...</a>
+                </div>
+                <div class="col-12 col-lg-4 item">
+                    <img src="{{asset('front-assets/img/blog/blog5.png')}}" class="img-fluid" alt="corona-discussion"/>
+                    <h4>8th NRNA Global Conference 2017.</h4>
+
+                    <p>
+                        My small interview regarding my journey to NRNA along with why my candidacy for NRNA secetary.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=goScwv2edl4" class="btn btn-secondary" target="_blank">Read more...</a>
                 </div>
             </div>
         </div>
