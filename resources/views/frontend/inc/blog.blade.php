@@ -34,6 +34,15 @@
                     </p>
                     <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more...</a>
                 </div>
+                <div class="col-12 col-lg-4 item">
+                    <img src="{{asset('front-assets/img/blog/blog4.png')}}" class="img-fluid" alt="corona-discussion"/>
+                    <h4>Me speaking on the occasion of NRNA South Korea seminar.</h4>
+
+                    <p>
+                        ICC Representative of NRN, south korea. Dr. Devi Basnet(me) speaking on the occasion of seminar.
+                    </p>
+                    <a href=https://www.youtube.com/watch?v=S0Pw5xevjp8" class="btn btn-secondary" target="_blank">Read more...</a>
+                </div>
             </div>
         </div>
     </section>
