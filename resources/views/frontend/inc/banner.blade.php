@@ -1,7 +1,7 @@
 <!-- HERO AREA -->
 <div class="jumbotron" id="hero" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
     <div class="container">
-        <h1>Hello, I am Devi B. Basnet</h1>
+        <h1>Hello, I am Devi</h1>
         <span class="typed">I am social worker</span>
 
         <div class="typed-wrap"></div>
