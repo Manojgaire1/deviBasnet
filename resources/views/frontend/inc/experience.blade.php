@@ -12,7 +12,7 @@
                 <div class="marker"></div>
                 <div class="timeline-content">
                     <h3>{{$timeline->title}}</h3>
-                    <span>{{Carbon\Carbon::parse($timeline->start_date)->format('Y')}} - @if(isset($timeline->end_date)){{Carbon\Carbon::parse($timeline->end_date)->format('Y')}}@else{{'Present'}}@endif</span>
+                    <span>{{Carbon\Carbon::parse($timeline->start_date)->format('Y')}} - @if($timeline->is_running == "1"){{'Present'}}@else @if(isset($timeline->end_date)){{Carbon\Carbon::parse($timeline->end_date)->format('Y')}}@else{{'Present'}}@endif @endif</span>
                     {!! $timeline->description !!}
                 </div>
             </div>
