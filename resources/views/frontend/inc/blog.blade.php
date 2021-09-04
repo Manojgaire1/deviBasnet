@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-4 item">
-                    <img src="{{asset('front-assets/img/blog/blog1.png')}}" class="img-fluid" alt="role-aim-and-upcoming-planning-of-nran"/>
+                    <img src="{{asset('front-assets/img/blog/blog1.jpg')}}" class="img-fluid" alt="role-aim-and-upcoming-planning-of-nran"/>
                     <h4>Role, aim and upcoming planning of NRNA</h4>
 
                     <p>
