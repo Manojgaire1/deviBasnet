@@ -21,8 +21,7 @@
                 </div>
                 <div id="aboutRight" class="col-lg-6 col-12">
                     <div>
-                        <h4>Hello! I am Devi</h4>
-
+                        <!-- <h4>Hello! I am Devi</h4> -->
                         <h2>ABOUT ME</h2>
                     </div>
                     <div>
