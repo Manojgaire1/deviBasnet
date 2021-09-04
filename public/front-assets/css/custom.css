@@ -615,6 +615,9 @@ nav a.nav-link:active, nav a.nav-link:focus {
     transition: .5s;
 }
 
+#services .box .img-hover {
+    display: none;
+}
 #services .box:hover {
     background: #333;
     border-bottom: 5px solid #e1e1e1;
@@ -623,6 +626,12 @@ nav a.nav-link:active, nav a.nav-link:focus {
 #services .box:hover .circle {
     background-color: #fff;
 }
+
+#services .box:hover .img-default {
+    display: none;
+}
+
+
 
 #services .box:hover i {
     color: #333;
