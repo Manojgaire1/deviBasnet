@@ -133,13 +133,13 @@ a.btn-primary {
 .btn-secondary {
     background: #000;
     border: 1px solid #000;
-    text-transform: uppercase;
+    text-transform: capitalize;
     border-radius: 0;
     text-shadow: none;
 }
 
 a.btn-secondary {
-    padding: 10px 12px 12px 12px;
+    padding: 0px 0px 0px 0px;
 }
 
 .btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {
