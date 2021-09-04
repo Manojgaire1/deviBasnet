@@ -135,7 +135,9 @@
                 masonry: {
                     columnWidth: '.item'
                 }
+                
             });
+            portfolioItems.isotope('reLayout');
             if (!isMobile) {
                 var footerParaHeight = footerWrap.height();
                 contentWrap.css("margin-bottom", footerParaHeight);
