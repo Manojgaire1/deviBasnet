@@ -20,7 +20,7 @@
                         <div class="box">
                             <div class="circle">
                                 <img class="img-fluid img-default" src="{{asset('front-assets/img/yoga-icon-with-background.svg')}}" alt="">
-                                <img class="img-fluid img-hover" src="{{asset('front-assets/img/yoga-icon-with-background.svg')}}" alt="">
+                                <img class="img-fluid img-hover" src="{{asset('front-assets/img/yoga-icon.svg')}}" alt="">
                             </div>
                             <h3>Yoga Medititation</h3>
                             <p>For the healthy body and mind yoga and meditation play an improtant role. Do regular yoga for healthier life.</p>
