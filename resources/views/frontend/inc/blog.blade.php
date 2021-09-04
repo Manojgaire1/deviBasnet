@@ -30,7 +30,7 @@
                     <h4>The pandemic-COVID-19:Impacts on Nepal/Nepalese, lesson from South Korea</h4>
 
                     <p>
-                        What is Covid-19 and how South Korea is becoming success for the control of Covid? The program was organized by Nepal Research and Education Network.
+                        What is Covid-19 and how South Korea is becoming success for the control of Covid? It was organized by Nepal Research and Education Network.
                     </p>
                     <a href="https://www.facebook.com/156218744417668/videos/915074156011822/" class="btn btn-secondary" target="_blank">Read more...</a>
                 </div>
