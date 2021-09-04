@@ -631,6 +631,10 @@ nav a.nav-link:active, nav a.nav-link:focus {
     display: none;
 }
 
+#services .box:hover:hover .img-hover {
+    display: block;
+}
+
 
 
 #services .box:hover i {
