@@ -901,6 +901,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
     display: block;
     font-weight: 300;
     padding: 10px 0;
+    text-align: left;
 }
 
 #testimonials .testimonial-author {
@@ -909,6 +910,7 @@ nav a.nav-link:active, nav a.nav-link:focus {
     font-weight: 700;
     color: #fff;
     text-transform: uppercase;
+    text-align: left;
 }
 
 #testimonials .flickity-page-dots {
