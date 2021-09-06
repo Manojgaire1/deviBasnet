@@ -6,7 +6,7 @@
 /******************************************************************************************************************/
 
 /* Edit the array as you wish. It will contain the typed strings. */
-var config_typedArray = ["I am a Senior Research Scientist.", "I am Social worker."];
+var config_typedArray = ["I am a senior research scientist.", "I am a social worker."];
 
 /* Disable Parallax effect on touch devices for performance reasons. */
 var config_disableParalaxOnTouchDevices = true;
