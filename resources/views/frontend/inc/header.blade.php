@@ -8,9 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come after these tags -->
 
     <!-- Fill in the following meta tags -->
-    <meta name="keywords" content="keyword1, keyword2, keyword3"/>
-    <meta name="description" content="Description">
-    <meta name="author" content="Author">
+    <meta name="keywords" content="devi basnet, NRNA ICC secretary, Devi Basnet research scientist"/>
+    <meta name="description" content="Hello this me Dr. Devi Bahadhur Basnet NRNA ICC secretary candidancy for year (2021-2022). I am a Senior Research Scientist living in South Korea.">
+    <meta name="author" content="Dr. Devi Bahadhur Basnet">
 
     <!-- Change the site title -->
     <title>Dr. Devi Bahadur Basnet | My Personal Website</title>
