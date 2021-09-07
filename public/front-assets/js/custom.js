@@ -199,6 +199,18 @@
             contentWrap.css('margin-bottom', 0);
         }
 
+        // Essential Resources
+        $('.my-opinion').slick({
+            // infinite: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            // speed: 2500,
+            arrows: true,
+            dots: false,
+        });
+
     });
 
 
@@ -372,5 +384,6 @@
     $window.load(function () {
         $("#preloader").fadeOut("slow");
     });
+
 
 })(jQuery);

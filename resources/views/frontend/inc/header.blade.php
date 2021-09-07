@@ -41,6 +41,9 @@
 
     <!-- animate.css -->
     <link rel="stylesheet" href="{{asset('front-assets/css/animate.css')}}"/>
+    {{-- SLick slider --}}
+    <link rel="stylesheet" href="{{asset('front-assets/css/slick.css')}}"/>
+    <link rel="stylesheet" href="{{asset('front-assets/css/slick-theme.css')}}"/>
 
     <!-- custom.css - the styling for this template -->
     <link rel="stylesheet" href="{{asset('front-assets/css/custom.css')}}">
