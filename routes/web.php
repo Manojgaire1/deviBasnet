@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\Banner\BannerController;
 use App\Http\Controllers\Admin\Activity\ActivityController;
 use App\Http\Controllers\Admin\Activity\Type\TypeController;
 use App\Http\Controllers\Admin\Timeline\TimelineController;
+use App\Http\Controllers\Admin\Blog\BlogController;
+use App\Http\Controllers\Admin\Blog\Category\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,5 +63,22 @@ Route::group(['prefix' => '/admin'],function(){
         Route::post('/newTimeline',[TimelineController::class,'store'])->name('admin.timeline.store');
         Route::post('/{id}',[TimelineController::class,'update'])->name('admin.timeline.update');
         Route::delete('/{id}',[TimelineController::class,'destroy'])->name('admin.timeline.destroy');
+    });
+
+    //route for activity
+    Route::group(['prefix' => '/blogs'],function(){
+        Route::get('',[BlogController::class,'index'])->name('admin.blog.index');
+        Route::get('/{blogId}/edit',[BlogController::class,'edit'])->name('admin.blog.edit');
+        Route::post('/newBlog',[BlogController::class,'store'])->name('admin.blog.store');
+        Route::post('/{id}',[BlogController::class,'update'])->name('admin.blog.update');
+        Route::delete('/{id}',[BlogController::class,'destroy'])->name('admin.blog.destroy');
+        //activity type
+        Route::group(['prefix' => '/categories'],function(){
+            Route::get('',[CategoryController::class,'index'])->name('admin.blog.category.index');
+            Route::post('/newCategory',[CategoryController::class,'store'])->name('admin.blog.category.store');
+            Route::get('/{categoryId}/edit',[CategoryController::class,'edit'])->name('admin.blog.category.edit');
+            Route::post('/{id}',[CategoryController::class,'update'])->name('admin.blog.category.update');
+            Route::delete('/{id}',[CategoryController::class,'destroy'])->name('admin.blog.category.destroy');
+        });
     });
 });
