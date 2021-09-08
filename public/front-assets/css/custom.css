@@ -1205,12 +1205,16 @@ section#about #aboutRight ul{
 #blog .my-opinion .slick-next {
     height: 30px;
     width: 30px;
-    background-color: #0404a9;
+    line-height: 45px;
+    background-color: #000;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
 }
 
 #blog .my-opinion .slick-prev:hover, 
 #blog .my-opinion .slick-next:hover {
-    background-color: #0404a9;
+    background-color: #000;
+    opacity: 1;
 }
 
 #blog .my-opinion .slick-prev:before, 
@@ -1221,4 +1225,11 @@ section#about #aboutRight ul{
 .my-opinion .slide-content {
     border-color: #ccc;
     border-width: 0 1px 1px 1px;
+    border-style: solid;
+    padding: 10px;
+}
+@media(min-width: 768px) {
+    .my-opinion .slide-content {
+        min-height: 198px;
+    }
 }
