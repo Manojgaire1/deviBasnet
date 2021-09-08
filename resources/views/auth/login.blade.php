@@ -1,13 +1,4 @@
-@extends('layouts.app')
-<link rel="stylesheet" href="{{asset('front-assets/css/bootstrap.min.css')}}">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:200,300,300i,400,700" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="{{asset('front-assets/font-awesome-4.7.0/css/font-awesome.min.css')}}">
-<link rel="stylesheet" href="{{asset('front-assets/css/custom.css')}}">
-
+@extends('frontend.layouts.master')
 @section('content')
 <div class="container">
     <form method="POST" action="{{ route('admin.login') }}" class="login-form">
