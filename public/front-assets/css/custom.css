@@ -1240,6 +1240,7 @@ form.login-form {
     padding: 20px;
     box-shadow: 0 0 15px rgb(0 0 0 / 50%);
     border-radius: 5px;
+    margin-top: 50px;
 }
 
 form.login-form .login-title {
