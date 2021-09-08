@@ -1188,3 +1188,35 @@ section#about #aboutRight ul{
         flex: 0 0 16667%;
     } */
   }
+  /* my opinion slider */
+
+  .slick-slider {
+      margin-left: -5px;
+      margin-right: -5px;
+  }
+
+.slick-slide {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #000;
+}
+
+#blog .my-opinion .slick-prev, 
+#blog .my-opinion .slick-next {
+    height: 30px;
+    width: 30px;
+    background-color: #0404a9;
+}
+
+#blog .my-opinion .slick-prev:hover, 
+#blog .my-opinion .slick-next:hover {
+    background-color: #0404a9;
+}
+
+#blog .my-opinion .slick-prev:before, 
+#blog .my-opinion .slick-next:before {
+    font-family: initial;
+}
