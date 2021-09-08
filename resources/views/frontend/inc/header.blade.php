@@ -9,7 +9,7 @@
 
     <!-- Fill in the following meta tags -->
     <meta name="keywords" content="Devi B Basnet, Devi Basnet, Medytox. Global biotech, Streptomyces, Genome analysis, Antibody Engineering, Molecular cloning, Gene Engineering, FK506, Drug development, Protein modeling, NRNA, South Korea, NRNA-Korea, ICC, Non-resident Nepalese Association, Motivation speaker, SONSIK, Founder Vice president, RIBB, CENAS,"/>
-    <meta name="description" content="Hello this me Dr. Devi Bahadhur Basnet NRNA ICC secretary candidancy for year (2021-2022). I am a Senior Research Scientist living in South Korea.">
+    <meta name="description" content="This is Dr. Devi B. Basnet from South Korea, a molecular biologist worked as senior scientist in Medytox, Inc. Dr. Basnet is a social worker. He has been serving the society for 15 years through NRNA. An outstanding student in college and an eminent scientist in South Korea. His insights and commitment for science, service, and nation building offers a new school of transformation especially for those who are living far from their home country.">
     <meta name="author" content="Dr. Devi Bahadhur Basnet">
 
     <!-- Change the site title -->

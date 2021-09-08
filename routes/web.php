@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\Activity\Type\TypeController;
 use App\Http\Controllers\Admin\Timeline\TimelineController;
 use App\Http\Controllers\Admin\Blog\BlogController;
 use App\Http\Controllers\Admin\Blog\Category\CategoryController;
+//login routes
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +86,8 @@ Route::group(['prefix' => '/admin','middleware' => 'auth'],function(){
     });
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/login',[LoginController::class,'showLoginForm'])->name('admin.login');
+Route::post('/admin/login',[LoginController::class,'login'])->name('admin.validateLogin');
+Route::get('/admin/password/reset',[SendPasswordResetEmails::class,'showLinkRequestForm'])->name('admin.password.request');
+Route::post('/admin/password/reset',[ResetPasswordController::class,'sendResetLinkEmail'])->name('admin.password.reset');
+Route::post('admin/logout',[LoginController::class,'logout'])->name('admin.logout');

@@ -118,7 +118,7 @@
                         <li class="user-profile header-notification">
                             <a href="#!">
                                 <img src="{{asset('admin-assets/images/user.png')}}" class="img-radius" alt="User-Profile-Image">
-                                <span>{{--{{ ucwords(Auth::user()->name)}}--}}</span>
+                                <span>{{ ucwords(Auth::user()->name)}}</span>
                                 <i class="ti-angle-down"></i>
                             </a>
                             <ul class="show-notification profile-notification">
@@ -136,7 +136,7 @@
                                     <a href="javascript:void(0);" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                                         <i class="ti-layout-sidebar-left"></i> Logout
                                     </a>
-                                    <form id="frm-logout" action="{{--{{ route('admin.logout') }}--}}" method="POST" style="display: none;">
+                                    <form id="frm-logout" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
