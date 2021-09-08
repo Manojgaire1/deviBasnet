@@ -46,6 +46,7 @@
                         <!-- <a href="#"><i class="fa fa-tumblr"></i></a> -->
                         <a href="https://www.instagram.com/drdevibasnet/" target="_blank"><i class="fa fa-instagram"></i></a>
                         <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
+                        <a href="https://www.facebook.com/inkwalkar" target="_blank" style="margin-left:50px;">Designed by Inkwalkar</a>
                     </p>
                 </div>
             </div>
