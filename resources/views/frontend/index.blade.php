@@ -7,6 +7,6 @@
     @include('frontend.inc.hireMe')
     @include('frontend.inc.activity',['types' => $types,'activities' => $activities])
     @include('frontend.inc.testimonials')
-    @include('frontend.inc.blog')
+    @include('frontend.inc.blog',['blogs' => $blogs])
     @include('frontend.inc.contact')
 @endsection

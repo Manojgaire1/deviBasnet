@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Type;
 use App\Models\Activity;
 use App\Models\Timeline;
+use App\Models\Blog;
 
 class HomeController extends Controller
 {
@@ -21,10 +22,14 @@ class HomeController extends Controller
         ->select('activities.id','activities.title as activity_title','activities.description','activities.featured_image','activities.documents_path','types.title','types.slug')
         ->where('activities.status','1')
         ->get();
+
+        //get the active blogs
+        $blogs   = Blog::where('status','1')->select('id','slug','title','featured_image','content','external_link')->get();
         return view('frontend.index')->with([
             'types'         => $types,
             'activities'    => $activities,
-            'timelines'     => $timelines
+            'timelines'     => $timelines,
+            'blogs'         => $blogs
         ]);
     }
 }
