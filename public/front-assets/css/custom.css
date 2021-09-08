@@ -1258,3 +1258,11 @@ form.login-form .btn-primary:hover {
     background-color: #fff;
     color: #222;
 }
+.footer .social_gate_icon {
+    height: 15px;
+    position: relative;
+    top: 2px;
+}
+.footer .social_gate_icon path {
+    fill: #fff;
+}
