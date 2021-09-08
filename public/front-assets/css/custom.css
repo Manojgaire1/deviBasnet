@@ -1200,9 +1200,6 @@ section#about #aboutRight ul{
     padding-right: 5px;
 }
 
-.slick-prev:before, .slick-next:before {
-    color: #000;
-}
 
 #blog .my-opinion .slick-prev, 
 #blog .my-opinion .slick-next {
