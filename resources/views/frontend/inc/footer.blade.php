@@ -61,6 +61,7 @@
 <script src="{{asset('front-assets/js/tether.min.js')}}"></script>
 <script src="{{asset('front-assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('front-assets/js/slick.min.js')}}"></script>
+<script src="{{asset('front-assets/js/jquery.matchHeight-min.js')}}"></script>
 <script src="{{asset('front-assets/js/jquery.stellar.min.js')}}"></script>
 <script src="{{asset('front-assets/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('front-assets/js/flickity.pkgd.min.js')}}"></script>

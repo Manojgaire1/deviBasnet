@@ -1217,3 +1217,8 @@ section#about #aboutRight ul{
 #blog .my-opinion .slick-next:before {
     font-family: initial;
 }
+
+.my-opinion .slide-content {
+    border-color: #ccc;
+    border-width: 0 1px 1px 1px;
+}

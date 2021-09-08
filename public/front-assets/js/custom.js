@@ -229,6 +229,18 @@
               ]
         });
 
+        function matchHeights() {
+            var options = {
+                byRow: false,
+                byRow: true,
+                property: 'height',
+                target: null,
+                remove: false
+            };
+            $('.my-opinion .slide-content').matchHeight(options);
+        }
+        matchHeights();
+
     });
 
 
