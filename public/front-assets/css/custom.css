@@ -1266,3 +1266,13 @@ form.login-form .btn-primary:hover {
 .footer .social_gate_icon path {
     fill: #fff;
 }
+
+.photo-text .social_gate_icon {
+    height: 25px;
+    position: relative;
+    top: 2px;
+}
+
+.photo-text .social_gate_icon path {
+    fill: #fff;
+}

@@ -13,7 +13,7 @@
                                 <a href="https://www.linkedin.com/in/basnetdevi/" target="_blank"><i class="fa fa-linkedin"></i></a>
                                 <a href="https://twitter.com/basnetdevi" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <!-- <a href="#"><i class="fa fa-tumblr"></i></a> -->
-                                <a href="https://www.researchgate.net/profile/Devi-Basnet-2" target="_blank"><img src="{{asset('front-assets/img/gate.svg')}}" class="img-fluid social_gate_icon"></a>
+                                <a href="https://www.researchgate.net/profile/Devi-Basnet-2" target="_blank"><img src="{{asset('front-assets/img/gate.svg')}}" class="img-fluid social_gate_icon svg"></a>
                                 <a href="https://www.instagram.com/drdevibasnet/" target="_blank"><i class="fa fa-instagram"></i></a>
                                 <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
                             </div>
