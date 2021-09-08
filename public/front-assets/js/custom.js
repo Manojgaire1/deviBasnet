@@ -204,12 +204,42 @@
             // infinite: false,
             slidesToShow: 3,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 5000,
             // speed: 2500,
             arrows: true,
             dots: false,
+            responsive: [
+
+                {
+                  breakpoint: 992,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 767,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+
+              ]
         });
+
+        function matchHeights() {
+            var options = {
+                byRow: false,
+                byRow: true,
+                property: 'height',
+                target: null,
+                remove: false
+            };
+            $('.my-opinion .slide-content').matchHeight(options);
+        }
+        matchHeights();
 
     });
 

@@ -1188,3 +1188,48 @@ section#about #aboutRight ul{
         flex: 0 0 16667%;
     } */
   }
+  /* my opinion slider */
+
+  .slick-slider {
+      margin-left: -5px;
+      margin-right: -5px;
+  }
+
+.slick-slide {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+#blog .my-opinion .slick-prev, 
+#blog .my-opinion .slick-next {
+    height: 30px;
+    width: 30px;
+    line-height: 45px;
+    background-color: #000;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+}
+
+#blog .my-opinion .slick-prev:hover, 
+#blog .my-opinion .slick-next:hover {
+    background-color: #000;
+    opacity: 1;
+}
+
+#blog .my-opinion .slick-prev:before, 
+#blog .my-opinion .slick-next:before {
+    font-family: initial;
+}
+
+.my-opinion .slide-content {
+    border-color: #ccc;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    padding: 10px;
+}
+@media(min-width: 768px) {
+    .my-opinion .slide-content {
+        min-height: 198px;
+    }
+}
