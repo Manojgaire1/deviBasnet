@@ -20,7 +20,6 @@
 /******************************************************************************************************************/
 /** GENERAL TEMPLATE STYLES                                                                                       */
 /******************************************************************************************************************/
-
 html {
     overflow-x: hidden;
 }
@@ -1232,4 +1231,30 @@ section#about #aboutRight ul{
     .my-opinion .slide-content {
         min-height: 198px;
     }
+}
+
+form.login-form {
+    max-width: 350px;
+    margin: 0 auto;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 20px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 50%);
+    border-radius: 5px;
+}
+
+form.login-form .login-title {
+    border-bottom: 1px solid #222;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+}
+
+form.login-form .btn-primary {
+    background-color: #222;
+    border: 1px solid #222;
+    color: #fff;
+}
+
+form.login-form .btn-primary:hover {
+    background-color: #fff;
+    color: #222;
 }
