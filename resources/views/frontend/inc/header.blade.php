@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come after these tags -->
 
     <!-- Fill in the following meta tags -->
-    <meta name="keywords" content="devi basnet, NRNA ICC secretary, Devi Basnet research scientist"/>
+    <meta name="keywords" content="Devi B Basnet, Devi Basnet, Medytox. Global biotech, Streptomyces, Genome analysis, Antibody Engineering, Molecular cloning, Gene Engineering, FK506, Drug development, Protein modeling, NRNA, South Korea, NRNA-Korea, ICC, Non-resident Nepalese Association, Motivation speaker, SONSIK, Founder Vice president, RIBB, CENAS,"/>
     <meta name="description" content="Hello this me Dr. Devi Bahadhur Basnet NRNA ICC secretary candidancy for year (2021-2022). I am a Senior Research Scientist living in South Korea.">
     <meta name="author" content="Dr. Devi Bahadhur Basnet">
 
