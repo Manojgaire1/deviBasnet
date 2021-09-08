@@ -82,22 +82,22 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/vehicles*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/blogs*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">Blog</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                             <ul class="pcoded-submenu">
-                                <li class="{{Request::is('admin/vehicles') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.banner.index')}}">
+                                <li class="{{Request::is('admin/blogs') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.blog.index')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext">{{ __('Blog Lists') }}</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="{{Request::is('admin/vehicles') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.banner.index')}}">
+                                <li class="{{Request::is('admin/blogs/categories') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.blog.category.index')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext">{{ __('Category Lists') }}</span>
                                         <span class="pcoded-mcaret"></span>

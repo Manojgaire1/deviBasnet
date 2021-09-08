@@ -25,8 +25,9 @@ use App\Http\Controllers\Admin\Blog\Category\CategoryController;
 
 Route::get('/', [HomeController::class,'index'])->name('front.index');
 
+
 //admin routes
-Route::group(['prefix' => '/admin'],function(){
+Route::group(['prefix' => '/admin','middleware' => 'auth'],function(){
     //for the dashboard
     Route::get('',function(){
         return redirect()->route('admin.dashboard.index');
@@ -82,3 +83,7 @@ Route::group(['prefix' => '/admin'],function(){
         });
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
