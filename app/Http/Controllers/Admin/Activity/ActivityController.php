@@ -33,7 +33,7 @@ class ActivityController extends AdminBaseController
             return Datatables($activities)
             ->addColumn('image_path',function($activity){
                 if($activity->featured_image != null)
-                    return asset('/uploads/activities/small'.'/'.$activity->featured_image);
+                    return asset('storage/uploads/activities/small'.'/'.$activity->featured_image);
                 return asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png');
             })
             ->addColumn('action', function ($activity) {

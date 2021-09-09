@@ -27,7 +27,7 @@ class AdminBaseController extends Controller
             $this->generateDifferentSizeImages($image,$name,'500','500',$path."/large");
         endif;
         //save the large image in the file system
-        $destinationPath = public_path($path);
+        $destinationPath = storage_path('app/public/'.$path);
         $image->move($destinationPath, $name);
         return $name;
 
@@ -40,7 +40,7 @@ class AdminBaseController extends Controller
      */
     protected function generateDifferentSizeImages($image,$name,$height, $width,$path){
         $this->createDirectoryIFNotExists($path);
-        $path =public_path($path);
+        $path =storage_path('app/public/'.$path);
         $img = Image::make($image->getRealPath());
         $img->resize($width, $height, function ($constraint) {
                 $constraint->aspectRatio();
@@ -54,8 +54,8 @@ class AdminBaseController extends Controller
      * @return void
      */
     protected function createDirectoryIFNotExists($directory_path){
-        if(!File::isDirectory(public_path($directory_path))){
-            File::makeDirectory(public_path($directory_path),0755,true,true);
+        if(!File::isDirectory(storage_path('app/public/'.$directory_path))){
+            File::makeDirectory(storage_path('app/public/'.$directory_path),0755,true,true);
         }
     }
 
@@ -66,17 +66,17 @@ class AdminBaseController extends Controller
      */
     protected function removeImages($directory_path,$image){
         //remove the old actual images
-        if(File::exists($directory_path.'/'.$image)){
-            File::delete($directory_path .'/'. $image);
+        if(File::exists(storage_path('app/public/').$directory_path.'/'.$image)){
+            File::delete(storage_path('app/public/').$directory_path .'/'. $image);
         }
 
         //remove the thumbnails
-        if(File::exists($directory_path.'/small/'.$image)){
-            File::delete($directory_path .'/small/'. $image);
+        if(File::exists(storage_path('app/public/').$directory_path.'/small/'.$image)){
+            File::delete(storage_path('app/public/').$directory_path .'/small/'. $image);
         }
         //remove the large images
-        if(File::exists($directory_path.'/large/'.$image)){
-            File::delete($directory_path .'/large/'. $image);
+        if(File::exists(storage_path('app/public/').$directory_path.'/large/'.$image)){
+            File::delete(storage_path('app/public/').$directory_path .'/large/'. $image);
         }
     }
 
