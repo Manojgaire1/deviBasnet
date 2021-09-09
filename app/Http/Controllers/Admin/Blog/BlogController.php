@@ -30,7 +30,7 @@ class BlogController extends AdminBaseController
             return Datatables($blogs)
             ->addColumn('image_path',function($blog){
                 if($blog->featured_image != null)
-                    return asset('/uploads/blogs/small'.'/'.$blog->featured_image);
+                    return asset('storage/uploads/blogs/small'.'/'.$blog->featured_image);
                 return asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png');
             })
             ->addColumn('action', function ($blog) {

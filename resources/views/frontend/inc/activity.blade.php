@@ -19,7 +19,7 @@
                 <div class="item @if($activity->slug == 'social'){{'col-md-4 col-lg-2'}}@else{{'col-md-4 col-lg-2'}}@endif {{$activity->slug}}" data-category="{{$activity->slug}}">
                     <a title="{!! $activity->description !!}"
                        data-rel="prettyPhoto"
-                       href="{{asset('uploads/activities/'.$activity->featured_image)}}">
+                       href="{{asset('storage/uploads/activities/'.$activity->featured_image)}}">
                         <div class="item-wrap">
                             <img class="img-fluid" src="{{asset('uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
                         </div>

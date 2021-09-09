@@ -12,7 +12,7 @@
                 <div class="xcol-12 xcol-lg-4 item">
                     <div class="slide-item">
                         <div class="slide-image">
-                            <img src="{{asset('uploads/blogs/large/'.$blog->featured_image)}}" class="img-fluid" alt="{{$blog->slug}}"/>
+                            <img src="{{asset('storage/uploads/blogs/large/'.$blog->featured_image)}}" class="img-fluid" alt="{{$blog->slug}}"/>
                         </div>
                         <div class="slide-content">
                             <h4>{{$blog->title}}</h4>
