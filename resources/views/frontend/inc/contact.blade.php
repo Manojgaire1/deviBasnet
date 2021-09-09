@@ -10,17 +10,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <div>
-                        <i class="fa fa-map-marker"> </i>Suwon, South Korea 
+                        <i class="fa fa-map-marker"> </i>{{$admin_address}}
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div>
-                        <i class="fa fa-phone"> </i>+82 10-2343-4725
+                        <i class="fa fa-phone"> </i>{{$admin_contact_phone}}
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div>
-                        <i class="fa fa-envelope"> </i>contact@devibasnet.com
+                        <i class="fa fa-envelope"> </i>{{$admin_contact_email}}
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Activity\Type\TypeController;
 use App\Http\Controllers\Admin\Timeline\TimelineController;
 use App\Http\Controllers\Admin\Blog\BlogController;
 use App\Http\Controllers\Admin\Blog\Category\CategoryController;
+use App\Http\Controllers\Admin\Setting\SettingController;
 //login routes
 use App\Http\Controllers\Auth\LoginController;
 
@@ -83,6 +84,11 @@ Route::group(['prefix' => '/admin','middleware' => 'auth'],function(){
             Route::post('/{id}',[CategoryController::class,'update'])->name('admin.blog.category.update');
             Route::delete('/{id}',[CategoryController::class,'destroy'])->name('admin.blog.category.destroy');
         });
+    });
+
+    Route::group(['prefix' => '/settings'],function(){
+        Route::get('',[SettingController::class,'edit'])->name('admin.settings.edit');
+        Route::post('',[SettingController::class,'update'])->name('admin.settings.update');
     });
 });
 

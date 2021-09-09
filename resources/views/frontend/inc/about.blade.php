@@ -9,12 +9,12 @@
 
                         <div class="photo-overlay">
                             <div class="photo-text social">
-                                <a href="https://www.facebook.com/drdevibasnet" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="https://www.linkedin.com/in/basnetdevi/" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://twitter.com/basnetdevi" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="{{$social_facebook_link}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="{{$social_linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                <a href="{{$social_twitter_link}}" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <!-- <a href="#"><i class="fa fa-tumblr"></i></a> -->
-                                <a href="https://www.researchgate.net/profile/Devi-Basnet-2" target="_blank"><img src="{{asset('front-assets/img/gate.svg')}}" class="img-fluid social_gate_icon svg"></a>
-                                <a href="https://www.instagram.com/drdevibasnet/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                <a href="{{$social_gate_link}}" target="_blank"><img src="{{asset('front-assets/img/gate.svg')}}" class="img-fluid social_gate_icon svg"></a>
+                                <a href="{{$social_instagram_link}}" target="_blank"><i class="fa fa-instagram"></i></a>
                                 <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
                             </div>
                         </div>
