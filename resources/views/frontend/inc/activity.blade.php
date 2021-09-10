@@ -21,7 +21,7 @@
                        data-rel="prettyPhoto"
                        href="{{asset('storage/uploads/activities/'.$activity->featured_image)}}">
                         <div class="item-wrap">
-                            <img class="img-fluid" src="{{asset('uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
+                            <img class="img-fluid" src="{{asset('storage/uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
                         </div>
                         <span class="magnifier"></span>
                     </a>
