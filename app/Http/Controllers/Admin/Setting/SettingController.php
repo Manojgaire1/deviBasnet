@@ -31,17 +31,7 @@ class SettingController extends Controller
     public function edit(){
         $this->setting = Setting::select('meta_key','meta_value')->get()->toArray();
         foreach($this->setting as $index=>$setting){
-            if(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "social_facebook_link"):
-                 $this->facebook_link = $setting['meta_value'];
-            elseif(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "social_linkedin_link"):
-                 $this->linkedin_link = $setting['meta_value'];
-            elseif(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "social_instagram_link"):
-                 $this->insta_link = $setting['meta_value'];
-            elseif(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "social_gate_link"):
-                 $this->gate_link = $setting['meta_value'];
-            elseif(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "social_twitter_link"):
-                 $this->twitter_link = $setting['meta_value']; 
-            elseif(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "seo_keywords"):
+            if(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "seo_keywords"):
                  $this->seo_keyword = $setting['meta_value'];
             elseif(array_key_exists('meta_key',$setting) && $setting['meta_key'] == "seo_description"):
                  $this->seo_description = $setting['meta_value'];
@@ -56,11 +46,6 @@ class SettingController extends Controller
             endif;
         }
         return view('admin.setting.edit')->with([
-           'social_facebook_link'     =>$this->facebook_link,
-           'social_instagram_link'    =>$this->insta_link,
-           'social_linkedin_link'     =>$this->linkedin_link,
-           'social_gate_link'         =>$this->gate_link,
-           'social_twitter_link'      =>$this->twitter_link,
            'admin_contact_email'      => $this->admin_contact_email,
            'admin_contact_phone'      => $this->admin_contact_phone,
            'seo_keywords'             => $this->seo_keyword,
