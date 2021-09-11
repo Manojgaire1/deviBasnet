@@ -107,7 +107,7 @@ Route::group(['prefix' => '/admin','middleware' => 'auth'],function(){
 
     //routes for the testimonials sections
     Route::group(['prefix' => '/testimonials'],function(){
-        Route::get('',[TestimonialController::class,'index'])->name('admin.blog.index');
+        Route::get('',[TestimonialController::class,'index'])->name('admin.testimonial.index');
         Route::get('/{testimonialId}/edit',[TestimonialController::class,'edit'])->name('admin.testimonial.edit');
         Route::post('/newTestimonials',[TestimonialController::class,'store'])->name('admin.testimonial.store');
         Route::post('/{id}',[TestimonialController::class,'update'])->name('admin.testimonial.update');
