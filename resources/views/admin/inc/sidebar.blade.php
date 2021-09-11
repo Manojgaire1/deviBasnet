@@ -105,6 +105,13 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="pcoded-trigger  {{Request::is('admin/testimonials*') ? 'active ' : '' }}">
+                            <a href="{{url('/admin/testimonials')}}">
+                                <span class="pcoded-micon"><i class="ti-comment-alt"></i><b>B</b></span>
+                                <span class="pcoded-mtext">Testimonials</span>
+                                <span class="pcoded-mcaret"></span>
+                            </a>
+                        </li>
                         <li class="pcoded-trigger  {{Request::is('admin/settings*') ? 'active ' : '' }}">
                             <a href="{{url('/admin/settings')}}">
                                 <span class="pcoded-micon"><i class="ti-settings"></i><b>B</b></span>

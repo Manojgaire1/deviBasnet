@@ -9,6 +9,7 @@ use App\Models\Activity;
 use App\Models\Timeline;
 use App\Models\Blog;
 use App\Models\Setting;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -35,6 +36,8 @@ class HomeController extends Controller
         ->where('activities.status','1')
         ->get();
         $this->renderSettingData();
+        //get the active testimonials
+        $testimonials = Testimonial::where('status','1')->select('client_name','company_name','position','featured_image','description')->get();
 
         //get the active blogs
         $blogs   = Blog::where('status','1')->select('id','slug','title','featured_image','content','external_link')->get();
@@ -43,6 +46,7 @@ class HomeController extends Controller
             'activities'               => $activities,
             'timelines'                => $timelines,
             'blogs'                    => $blogs,
+            'testimonials'             => $testimonials,
             'social_facebook_link'     =>$this->facebook_link,
             'social_instagram_link'    =>$this->insta_link,
             'social_linkedin_link'     =>$this->linkedin_link,

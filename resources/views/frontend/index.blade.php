@@ -6,7 +6,9 @@
     @include('frontend.inc.experience',['timelines' => $timelines])
     @include('frontend.inc.hireMe')
     @include('frontend.inc.activity',['types' => $types,'activities' => $activities])
-    @include('frontend.inc.testimonials')
+    @include('frontend.inc.testimonials',[
+        'testimonials' => $testimonials
+    ])
     @include('frontend.inc.blog',['blogs' => $blogs])
     @include('frontend.inc.contact',[
         'admin_contact_email'    => $admin_contact_email,

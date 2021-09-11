@@ -8,31 +8,21 @@
         <div class="container">
             <div class="row">
                 <div id="testimonials-content" class="col-12">
+                    @foreach($testimonials as $testimonial)
                     <div class="gallery-cell">
                         <div class="testimonial">
+                            @if($testimonial->featured_image != null)
                             <img class="testimonial-avatar"
-                                 src="{{asset('front-assets/img/client1.png')}}" alt="">
-                            <q class="testimonial-quote">Dr. Basnet’s message is clear: “the time to act is now, connect and build the minds globally to prosper the motherland, and the future is ours to take.”
-</br>I support and wish Dr. Basnet a great success in his future endeavors.</q>
-                            <span class="testimonial-author">Yam N. Timsina(PhD.),Founder Yaaad LLC, USA</span>
-                        </div>
-                    </div>
-                    <div class="gallery-cell">
-                        <div class="testimonial">
+                                 src="{{asset('storage/uploads/testimonials/'.$testimonial->featured_image)}}" alt="{{$testimonial->client_name}}">
+                            @else
                             <img class="testimonial-avatar"
                                  src="{{asset('front-assets/img/client.png')}}" alt="">
-                            <q class="testimonial-quote">We wish Devi Basnet (PhD.) all the best for the coming election.</q>
-                            <span class="testimonial-author"></span>
+                            @endif
+                            <q class="testimonial-quote">{!! $testimonial->description !!}</q>
+                            <span class="testimonial-author">{{$testimonial->client_name}},{{$testimonial->position.' ' .$testimonial->company_name}}</span>
                         </div>
                     </div>
-                    <div class="gallery-cell">
-                        <div class="testimonial">
-                            <img class="testimonial-avatar"
-                                 src="{{asset('front-assets/img/client.png')}}" alt="">
-                            <q class="testimonial-quote">We wish Devi Basnet (PhD.) all the best for the coming election.</q>
-                            <span class="testimonial-author"></span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

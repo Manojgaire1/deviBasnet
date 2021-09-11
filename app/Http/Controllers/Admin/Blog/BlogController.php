@@ -125,7 +125,7 @@ class BlogController extends AdminBaseController
             $image = $this->uploadImage($request->file('category_image_path'),$thumbnail=true,$this->upload_image_dir);
             //remove the doucmentpat
             //need to remove the old image from the directory
-            $this->removeImages($this->upload_image_dir,$this->selectedBlog->featured_images);
+            $this->removeImages($this->upload_image_dir,$this->selectedBlog->featured_image);
             $data['image_path'] = $image;
         endif;
 

@@ -132,7 +132,7 @@ class ActivityController extends AdminBaseController
             $image = $this->uploadImage($request->file('activity_image_path'),$thumbnail=true,$this->upload_image_dir);
             //remove the doucmentpat
             //need to remove the old image from the directory
-            $this->removeImages($this->upload_image_dir,$this->selectedActivity->featured_images);
+            $this->removeImages($this->upload_image_dir,$this->selectedActivity->featured_image);
             $data['image_path'] = $image;
         endif;
 

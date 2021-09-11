@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\Blog\Category\CategoryController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\Page\PageController;
 use App\Http\Controllers\Admin\Interest\InterestController;
-use App\Http\Controllers\Admin\Testimonail\TestimonialController;
+use App\Http\Controllers\Admin\Testimonial\TestimonialController;
 
 
 //login routes
