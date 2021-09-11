@@ -232,7 +232,7 @@
         function matchHeights() {
             var options = {
                 byRow: false,
-                byRow: true,
+                // byRow: true,
                 property: 'height',
                 target: null,
                 remove: false

@@ -1277,3 +1277,18 @@ form.login-form .btn-primary:hover {
 .photo-text .social_gate_icon path {
     fill: #fff;
 }
+
+#testimonials .testimonial-quote {
+    padding-left: 10px;
+    position: relative;
+}
+
+#testimonials .testimonial-quote:before {
+    position: absolute;
+    left: 0;
+}
+
+#testimonials .testimonial-quote:before {
+    position: absolute;
+    left: 0;
+}
