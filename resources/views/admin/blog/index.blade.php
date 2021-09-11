@@ -455,7 +455,7 @@
                 tinymce.get('description').setContent(response.blog.content);
             //set the if provided
             if(response.blog.featured_image != null){
-                var image_directory = "{{asset('/uploads/blogs/large')}}";
+                var image_directory = "{{asset('storage/uploads/blogs/large')}}";
                 $(".image-preview-single").attr('src',image_directory + "/" + response.blog.featured_image);
             }
         }

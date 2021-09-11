@@ -73,8 +73,8 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="{{Request::is('admin/vehicles') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.banner.index')}}">
+                                <li class="{{Request::is('admin/cms/interests') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.cms.interest.index')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext">{{ __('Interests') }}</span>
                                         <span class="pcoded-mcaret"></span>

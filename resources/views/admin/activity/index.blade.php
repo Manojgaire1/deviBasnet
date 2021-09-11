@@ -437,7 +437,7 @@
         //function to populate the modal data while the modal open in case of the edit menu option
         function populateModalData(response,has_set_menu_image){
             //change the modal heading
-            $("h5.modal-title").html('Update ' + response.activity.title + ' make')
+            $("h5.modal-title").html('Update ' + response.activity.title + ' activity')
             //populate the individual field
             $("#name").val(response.activity.title);
             //loop through each 
@@ -460,7 +460,7 @@
                 tinymce.get('description').setContent(response.activity.description);
             //set the if provided
             if(response.activity.featured_image != null){
-                var image_directory = "{{asset('/uploads/activities/large')}}";
+                var image_directory = "{{asset('storage/uploads/activities/large')}}";
                 $(".image-preview-single").attr('src',image_directory + "/" + response.activity.featured_image);
             }
         }

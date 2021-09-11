@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 //front controllers
 use App\Http\Controllers\Frontend\HomeController;
+
+
 //admin controllers
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Banner\BannerController;
@@ -12,6 +14,11 @@ use App\Http\Controllers\Admin\Timeline\TimelineController;
 use App\Http\Controllers\Admin\Blog\BlogController;
 use App\Http\Controllers\Admin\Blog\Category\CategoryController;
 use App\Http\Controllers\Admin\Setting\SettingController;
+use App\Http\Controllers\Admin\Page\PageController;
+use App\Http\Controllers\Admin\Interest\InterestController;
+use App\Http\Controllers\Admin\Testimonail\TestimonialController;
+
+
 //login routes
 use App\Http\Controllers\Auth\LoginController;
 
@@ -85,13 +92,35 @@ Route::group(['prefix' => '/admin','middleware' => 'auth'],function(){
             Route::delete('/{id}',[CategoryController::class,'destroy'])->name('admin.blog.category.destroy');
         });
     });
+    //routes for the cms pages and my interest section
+    Route::group(['prefix' => '/cms'],function(){
+        Route::get('/about',[PageController::class,'about'])->name('admin.cms.page.about.edit');
+        Route::post('/about/{pageId}',[PageController::class,'updateAbout'])->name('admin.cms.page.about.udpate');
+        Route::group(['prefix' => '/interests'],function(){
+            Route::get('',[InterestController::class,'index'])->name('admin.cms.interest.index');
+            Route::post('/newInterest',[InterestController::class,'store'])->name('admin.cms.interest.store');
+            Route::get('/{interesId}/edit',[InterestController::class,'edit'])->name('admin.cms.interest.edit');
+            Route::post('/{interestId}',[InterestController::class,'update'])->name('admin.cms.interest.update');
+            Route::delete('/{interestId}',[InterestController::class,'destroy'])->name('admin.cms.interest.destroy');
+        });
+    });
 
+    //routes for the testimonials sections
+    Route::group(['prefix' => '/testimonials'],function(){
+        Route::get('',[TestimonialController::class,'index'])->name('admin.blog.index');
+        Route::get('/{testimonialId}/edit',[TestimonialController::class,'edit'])->name('admin.testimonial.edit');
+        Route::post('/newTestimonials',[TestimonialController::class,'store'])->name('admin.testimonial.store');
+        Route::post('/{id}',[TestimonialController::class,'update'])->name('admin.testimonial.update');
+        Route::delete('/{id}',[TestimonialController::class,'destroy'])->name('admin.testimonial.destroy');
+    });
+
+    //route for the devi setting details
     Route::group(['prefix' => '/settings'],function(){
         Route::get('',[SettingController::class,'edit'])->name('admin.settings.edit');
         Route::post('',[SettingController::class,'update'])->name('admin.settings.update');
     });
 });
-
+//routes for the login and logout and forget password and others
 Route::get('/admin/login',[LoginController::class,'showLoginForm'])->name('admin.login');
 Route::post('/admin/login',[LoginController::class,'login'])->name('admin.validateLogin');
 Route::get('/admin/password/reset',[SendPasswordResetEmails::class,'showLinkRequestForm'])->name('admin.password.request');
