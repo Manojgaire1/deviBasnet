@@ -1292,3 +1292,6 @@ form.login-form .btn-primary:hover {
     position: absolute;
     left: 0;
 }
+#testimonials .testimonial-quote p {
+    display: inline-block;
+}
