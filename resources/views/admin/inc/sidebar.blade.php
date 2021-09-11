@@ -59,7 +59,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/vehicles*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/cms*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">CMS</span>

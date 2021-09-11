@@ -3,20 +3,22 @@
 namespace App\Http\Controllers\Admin\Interest;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\AdminBaseController;
 use Illuminate\Http\Request;
+use App\Models\Interest;
 
-class InterestController extends Controller
+class InterestController extends AdminBaseController
 {
-    protected $activity;
+    protected $interest;
     protected $data = array();
-    protected $upload_image_dir = "uploads/activities";
-    protected $upload_doc_dir   = "uploads/activities/doc";
-    protected $selectedActivity;
+    protected $upload_image_dir = "uploads/interests";
+    protected $upload_image_hover_dir = "uploads/interests/hover";
+    protected $selectedInterest;
     
 
     //load the dependency
-    public function __construct(Activity $activity){
-        $this->activity = $activity;
+    public function __construct(Interest $interest){
+        $this->interest = $interest;
     }
     /**
      * Display a listing of the resource.
@@ -25,31 +27,33 @@ class InterestController extends Controller
      */
     public function index(Request $request){
         if($request->ajax()):
-            $activities = Activity::join('types','types.id','activities.type_id')->select('activities.id','activities.title as activity_title','activities.status','activities.featured_image','types.title')->orderBy('id','desc');
-            return Datatables($activities)
-            ->addColumn('image_path',function($activity){
-                if($activity->featured_image != null)
-                    return asset('storage/uploads/activities/small'.'/'.$activity->featured_image);
-                return asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png');
+            $interests = Interest::orderBy('id','desc');
+            return Datatables($interests)
+            ->addColumn('icon_path',function($interest){
+                if($interest->icon_path != null)
+                    return asset('storage/uploads/interests/small'.'/'.$interest->icon_path);
+                return asset('/admin-assets/images/user.png');
             })
-            ->addColumn('action', function ($activity) {
+            ->addColumn('hover_icon_path',function($interest){
+                if($interest->hover_icon_path != null)
+                    return asset('storage/uploads/interests/hover/small'.'/'.$interest->hover_icon_path);
+                return asset('/admin-assets/images/user.png');
+            })
+            ->addColumn('action', function ($interest) {
                 $return_html = '<div class="dropdown">' .
 
                     '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-more-alt"></i></button>' .
                     '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >' .
                     '<ul>' .
-                    '<li><button class="dropdown-item edit-btn" data-activity-id = "'.$activity->id.'" href = "#" > Edit</button ></li >'.
-                    '<li ><a class="dropdown-item delete-btn" href = "#" data-activity-id = '.$activity->id.' > Delete</a ></li >'.
+                    '<li><button class="dropdown-item edit-btn" data-interest-id = "'.$interest->id.'" href = "#" > Edit</button ></li >'.
+                    '<li ><a class="dropdown-item delete-btn" href = "#" data-interest-id = '.$interest->id.' > Delete</a ></li >'.
                     '</ul >'.
                     '</div ></div >';
                 return $return_html;
             })->rawColumns(['action','description'])
             ->make();
         else:
-            $types =  Type::where('status','1')->select('id','title')->get();
-            return view('admin.activity.index')->with([
-                'types'  => $types
-            ]);
+            return view('admin.interest.index');
         endif;
     }
     /**
@@ -63,22 +67,22 @@ class InterestController extends Controller
         //
         $data = $request->except("_token");
         //check the request have the image or not 
-        if($request->hasFile("activity_image_path")):
-            $image = $this->uploadImage($request->file('activity_image_path'),$thumbnail=true,$this->upload_image_dir);
+        if($request->hasFile("icon_path")):
+            $image = $this->uploadImage($request->file('icon_path'),$thumbnail=true,$this->upload_image_dir);
             $data['image_path'] = $image;
 
         endif;
-        if($request->hasFile("activity_doc")):
-            $document = $this->uploadImage($request->file('activity_doc'),$thumbnail=false,$this->upload_doc_dir);
-            $data['activitiy_doc'] = $document;
+        if($request->hasFile("hover_icon_path")):
+            $hover_image = $this->uploadImage($request->file('hover_icon_path'),$thumbnail=true,$this->upload_image_hover_dir);
+            $data['hover_image_path'] = $hover_image;
         endif;
         
         //save the activity in database
-        $this->selectedActivity  = $this->activity->addActivity($data);
-        if($this->selectedActivity):
-            return response()->json(array('status' => 'success','message' => 'Activity has been created successfully','title' => 'Successfully created'),200);
+        $this->selectedInterest  = $this->interest->addInterest($data);
+        if($this->selectedInterest):
+            return response()->json(array('status' => 'success','message' => 'Interest has been created successfully','title' => 'Successfully created'),200);
         else:
-            return response()->json(array('status' => 'failed','message' => 'Activity cannot be created, please try again','title' => 'Failed'),200);
+            return response()->json(array('status' => 'failed','message' => 'Interest cannot be created, please try again','title' => 'Failed'),200);
         endif;
     }
 
@@ -102,11 +106,11 @@ class InterestController extends Controller
     public function edit($id)
     {
         //
-        $this->selectedActivity = $this->activity::findOrFail($id);
-        if($this->selectedActivity):
-            return response()->json(array('status' => 'success', 'activity' => $this->selectedActivity,'message' => 'Activity has been fetched successfully!'),200);
+        $this->selectedInterest = $this->interest::findOrFail($id);
+        if($this->selectedInterest):
+            return response()->json(array('status' => 'success', 'interest' => $this->selectedInterest,'message' => 'Interest has been fetched successfully!'),200);
         else:
-            return response()->json(array('status' => 'failed','message' => 'Activity does not exist in the server'),404);
+            return response()->json(array('status' => 'failed','message' => 'Interest does not exist in the server'),404);
         endif;
     }
 
@@ -120,34 +124,34 @@ class InterestController extends Controller
     public function update(Request $request, $id)
     {
         //get the make by id
-        $this->selectedActivity  = $this->activity->where('id',$id)->first();
+        $this->selectedInterest  = $this->interest->where('id',$id)->first();
         $data = $request->except('_token');
         //check the image has been uploaded or not
-        if($request->hasFile("activity_image_path")):
+        if($request->hasFile("icon_path")):
             //upload the image and their various thumbnails
-            $image = $this->uploadImage($request->file('activity_image_path'),$thumbnail=true,$this->upload_image_dir);
+            $image = $this->uploadImage($request->file('icon_path'),$thumbnail=true,$this->upload_image_dir);
             //remove the doucmentpat
             //need to remove the old image from the directory
-            $this->removeImages($this->upload_image_dir,$this->selectedActivity->featured_images);
+            $this->removeImages($this->upload_image_dir,$this->selectedInterest->icon_path);
             $data['image_path'] = $image;
         endif;
 
         //check the doucment has been updated or not
-        if($request->hasFile("activity_doc")):
+        if($request->hasFile("hover_icon_path")):
             //upload the image and their various thumbnails
-            $image = $this->uploadImage($request->file('activity_doc'),$thumbnail=false,$this->upload_doc_dir);
+            $image = $this->uploadImage($request->file('hover_icon_path'),$thumbnail=true,$this->upload_image_hover_dir);
             //remove the doucmentpat
             //need to remove the old image from the directory
-            $this->removeImages($this->upload_doc_dir,$this->selectedActivity->documents_path);
-            $data['activitiy_doc'] = $image;
+            $this->removeImages($this->upload_image_hover_dir,$this->selectedInterest->hover_icon_path);
+            $data['hover_image_path'] = $image;
         endif;
         //update the record in the storage
-        $this->selectedActivity  = $this->activity->updateActivity($data,$id);
+        $this->selectedInterest  = $this->interest->updateInterest($data,$id);
         //send the response back to the client as per the db response
-        if($this->selectedActivity):
-            return response()->json(array('status' => 'success','message' => 'Activity has been updated successfully','title' => 'Successfully updated'),200);
+        if($this->selectedInterest):
+            return response()->json(array('status' => 'success','message' => 'Interest has been updated successfully','title' => 'Successfully updated'),200);
         else:
-            return response()->json(array('status' => 'failed','message' => 'Activity cannot be updated, please try again','title' => 'Update failed'),200);
+            return response()->json(array('status' => 'failed','message' => 'Interest cannot be updated, please try again','title' => 'Update failed'),200);
         endif;
     }
 
@@ -160,28 +164,28 @@ class InterestController extends Controller
     public function destroy($id)
     {
         //
-        $this->selectedActivity = $this->activity->where('id',$id)->first();
-        if($this->selectedActivity):
+        $this->selectedInterest = $this->interest->where('id',$id)->first();
+        if($this->selectedInterest):
                 //remove the old images
-                $activity_image = $this->selectedActivity->featured_image;
-                $activity_doc   = $this->selectedActivity->documents_path;
-                if($this->selectedActivity->destroy($id)):
-                    if($activity_image != null):
+                $icon_image         = $this->selectedInterest->icon_path;
+                $hover_icon_image   = $this->selectedInterest->hover_icon_path;
+                if($this->selectedInterest->destroy($id)):
+                    if($icon_image != null):
                         //remove the old images
-                        $this->removeImages($this->upload_image_dir,$activity_image);
+                        $this->removeImages($this->upload_image_dir,$icon_image);
                     endif;
-                    if($activity_doc != null):
+                    if($hover_icon_image != null):
                         //remove the old images
-                        $this->removeImages($this->upload_doc_dir,$activity_doc);
+                        $this->removeImages($this->upload_image_hover_dir,$hover_icon_image);
                     endif;
                     // send the response back to the client with the success message
-                    return response()->json(array('status' => 'success', 'message' => 'Activity has been deleted successfully','title' => 'Activity deleted!'),200);
+                    return response()->json(array('status' => 'success', 'message' => 'Interest has been deleted successfully','title' => 'Interest deleted!'),200);
                 else:
                     //send the failed  message to teh client that the menu cannot be deleted
-                    return response()->json(array('status' => 'failed', 'message' => 'Activity cannot be deleted, please try again','title' => 'Deletion failed!'),200);
+                    return response()->json(array('status' => 'failed', 'message' => 'Interest cannot be deleted, please try again','title' => 'Deletion failed!'),200);
                 endif;
         else:
-            return response()->json(array('status' => 'failed','message' => 'Activity does not exists, please try again'),404);
+            return response()->json(array('status' => 'failed','message' => 'Interest does not exists, please try again'),404);
 
         endif;
     }
