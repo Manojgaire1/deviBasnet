@@ -10,6 +10,7 @@ use App\Models\Timeline;
 use App\Models\Blog;
 use App\Models\Setting;
 use App\Models\Testimonial;
+use App\Models\Interest;
 
 class HomeController extends Controller
 {
@@ -41,12 +42,16 @@ class HomeController extends Controller
 
         //get the active blogs
         $blogs   = Blog::where('status','1')->select('id','slug','title','featured_image','content','external_link')->get();
+
+        //get the interest
+        $interests = Interest::where('status','1')->take(4)->get();
         return view('frontend.index')->with([
             'types'                    => $types,
             'activities'               => $activities,
             'timelines'                => $timelines,
             'blogs'                    => $blogs,
             'testimonials'             => $testimonials,
+            'interests'                => $interests,
             'social_facebook_link'     =>$this->facebook_link,
             'social_instagram_link'    =>$this->insta_link,
             'social_linkedin_link'     =>$this->linkedin_link,

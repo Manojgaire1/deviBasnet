@@ -250,7 +250,7 @@
                         validators: {
                             file: {
                                 extension: 'jpeg,jpg,png,svg',
-                                type: 'image/jpeg,image/png,image/svg',
+                                type: 'image/jpeg,image/png,image/svg+xml',
                                 maxSize: 2097152,   // 2048 * 1024
                                 message: 'You cannot upload the image that is greater than 2MB size'
                             }

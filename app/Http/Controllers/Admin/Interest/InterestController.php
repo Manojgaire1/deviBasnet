@@ -31,12 +31,12 @@ class InterestController extends AdminBaseController
             return Datatables($interests)
             ->addColumn('icon_path',function($interest){
                 if($interest->icon_path != null)
-                    return asset('storage/uploads/interests/small'.'/'.$interest->icon_path);
+                    return asset('storage/uploads/interests'.'/'.$interest->icon_path);
                 return asset('/admin-assets/images/user.png');
             })
             ->addColumn('hover_icon_path',function($interest){
                 if($interest->hover_icon_path != null)
-                    return asset('storage/uploads/interests/hover/small'.'/'.$interest->hover_icon_path);
+                    return asset('storage/uploads/interests/hover'.'/'.$interest->hover_icon_path);
                 return asset('/admin-assets/images/user.png');
             })
             ->addColumn('action', function ($interest) {
@@ -68,12 +68,12 @@ class InterestController extends AdminBaseController
         $data = $request->except("_token");
         //check the request have the image or not 
         if($request->hasFile("icon_path")):
-            $image = $this->uploadImage($request->file('icon_path'),$thumbnail=true,$this->upload_image_dir);
+            $image = $this->uploadImage($request->file('icon_path'),$thumbnail=false,$this->upload_image_dir);
             $data['image_path'] = $image;
 
         endif;
         if($request->hasFile("hover_icon_path")):
-            $hover_image = $this->uploadImage($request->file('hover_icon_path'),$thumbnail=true,$this->upload_image_hover_dir);
+            $hover_image = $this->uploadImage($request->file('hover_icon_path'),$thumbnail=false,$this->upload_image_hover_dir);
             $data['hover_image_path'] = $hover_image;
         endif;
         
@@ -129,7 +129,7 @@ class InterestController extends AdminBaseController
         //check the image has been uploaded or not
         if($request->hasFile("icon_path")):
             //upload the image and their various thumbnails
-            $image = $this->uploadImage($request->file('icon_path'),$thumbnail=true,$this->upload_image_dir);
+            $image = $this->uploadImage($request->file('icon_path'),$thumbnail=false,$this->upload_image_dir);
             //remove the doucmentpat
             //need to remove the old image from the directory
             $this->removeImages($this->upload_image_dir,$this->selectedInterest->icon_path);
@@ -139,7 +139,7 @@ class InterestController extends AdminBaseController
         //check the doucment has been updated or not
         if($request->hasFile("hover_icon_path")):
             //upload the image and their various thumbnails
-            $image = $this->uploadImage($request->file('hover_icon_path'),$thumbnail=true,$this->upload_image_hover_dir);
+            $image = $this->uploadImage($request->file('hover_icon_path'),$thumbnail=false,$this->upload_image_hover_dir);
             //remove the doucmentpat
             //need to remove the old image from the directory
             $this->removeImages($this->upload_image_hover_dir,$this->selectedInterest->hover_icon_path);
