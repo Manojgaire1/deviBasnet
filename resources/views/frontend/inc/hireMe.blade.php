@@ -7,8 +7,12 @@
         <div class="col-12">
             <h2 class="animation" data-animation="fadeInLeft">{{$hireme->excerpt}}</h2>
             <h4 class="animation" data-animation="fadeInLeft">{!! $hireme->content !!}</h4>
-            <a data-animation="fadeInRight" class="btn btn-primary animation"
-                href="{{url('/uploads/Manifesto_Devi_For_2021-2023_NRNAICC_Secretary.pdf')}}" target="_blank">View my
+            @php
+            $link = $hireme->pageDetails->where('meta_key','Link')->first()->meta_value;
+            @endphp
+            <a data-animation="fadeInRight" class="btn btn-primary animation" href="{{strip_tags($link)}}"
+                target="_blank">View
+                my
                 manifesto!</a>
         </div>
     </div>

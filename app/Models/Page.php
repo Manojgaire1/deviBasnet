@@ -35,7 +35,7 @@ class Page extends Model
         $selected_page->save();
         return $selected_page;
     }
-    public function pageDetail()
+    public function pageDetails()
     {
         return $this->hasMany('App\Models\PageDetail');
     }

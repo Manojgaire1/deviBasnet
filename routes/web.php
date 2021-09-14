@@ -11,13 +11,14 @@ use App\Http\Controllers\Admin\Blog\Category\CategoryController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Interest\InterestController;
 use App\Http\Controllers\Admin\Page\PageController;
+use App\Http\Controllers\Admin\Page\PageDetailController;
 use App\Http\Controllers\Admin\Setting\SettingController;
 use App\Http\Controllers\Admin\Testimonial\TestimonialController;
 use App\Http\Controllers\Admin\Timeline\TimelineController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Frontend\HomeController;
 
 //login routes
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -103,6 +104,17 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
 
             Route::post('/{pageId}', [PageController::class, 'updatePage'])->name('admin.cms.page.update');
             Route::delete('/{pageId}', [PageController::class, 'destroy'])->name('admin.cms.page.destroy');
+            Route::get('/all', [PageController::class, 'all'])->name('admin.cms.page.all');
+
+        });
+        // page details
+        Route::group(['prefix' => '/page/details'], function () {
+            Route::get('', [PageDetailController::class, 'index'])->name('admin.cms.page.detail.index');
+            Route::post('/', [PageDetailController::class, 'store'])->name('admin.cms.page.detail.store');
+            Route::get('/{pageDetailId}/edit', [PageDetailController::class, 'edit'])->name('admin.cms.page.detail.edit');
+
+            Route::post('/{pageDetailId}', [PageDetailController::class, 'update'])->name('admin.cms.page.detail.update');
+            Route::delete('/{pageDetailId}', [PageDetailController::class, 'destroy'])->name('admin.cms.page.detail.destroy');
 
         });
 

@@ -89,6 +89,13 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                <li class="{{Request::is('admin/cms/pages/details') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.cms.page.detail.index')}}">
+                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                        <span class="pcoded-mtext">{{ __('Page Details') }}</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="pcoded-hasmenu {{Request::is('admin/blogs*') ? 'active pcoded-trigger complete' : '' }}"

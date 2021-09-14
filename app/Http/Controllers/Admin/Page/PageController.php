@@ -146,4 +146,9 @@ class PageController extends AdminBaseController
 
         endif;
     }
+    public function all()
+    {
+        $pages = Page::select('id', 'title')->get();
+        return \response(['status' => 'success', 'result' => $pages]);
+    }
 }
