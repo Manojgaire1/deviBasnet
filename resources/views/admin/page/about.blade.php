@@ -37,12 +37,12 @@
                                                 <div class="file-upload" style="max-width: 100%!important">
                                                     <div class="image-upload-wrap" @if(isset($about->featured_image))
                                                         style="background:
-                                                        url({{asset('storage/uploads/banners/small' . '/' . $about->featured_image)}});background-size:
+                                                        url({{asset('storage/uploads/pages/small' . '/' . $about->featured_image)}});background-size:
                                                         contain;" @else style="background:
                                                         url({{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}});background-size:
                                                         contain;" @endif>
                                                         <img @if(isset($about->featured_image))
-                                                        src="{{asset('storage/uploads/banners/small' . '/' . $about->featured_image)}}"
+                                                        src="{{asset('storage/uploads/pages/small' . '/' . $about->featured_image)}}"
                                                         @else
                                                         src="{{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}}"
                                                         @endif

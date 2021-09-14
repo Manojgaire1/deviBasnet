@@ -426,7 +426,7 @@
             tinymce.get('content').setContent(response.page.content);
             //set the if provided
             if(response.page.featured_image != null){
-                var image_directory = "{{asset('storage/uploads/page/large')}}";
+                var image_directory = "{{asset('storage/uploads/pages/large')}}";
                 $(".image-preview-single").attr('src',image_directory + "/" + response.page.featured_image);
             }
         }
