@@ -400,7 +400,7 @@
             // selected page
             var page = $("select[name='page'] > option")
             page.each((index,value) =>{
-                
+                console.log(value)
                 if(response.page_detail.page_id == value.value){
                     $("select[name='page']").val(response.page_detail.page_id)
                 }

@@ -7,13 +7,13 @@
         <div class="col-12">
             <h2 class="animation" data-animation="fadeInLeft">{{$hireme->excerpt}}</h2>
             <h4 class="animation" data-animation="fadeInLeft">{!! $hireme->content !!}</h4>
-            @php
-            $link = $hireme->pageDetails->where('meta_key','Link')->first()->meta_value;
-            @endphp
-            <a data-animation="fadeInRight" class="btn btn-primary animation" href="{{strip_tags($link)}}"
-                target="_blank">View
+
+
+            <a data-animation="fadeInRight" class="btn btn-primary animation" @if($hiremeButtonLink!='' )
+                href="{{strip_tags($hiremeButtonLink)}}" @else href="#" @endif target="_blank">View
                 my
                 manifesto!</a>
+
         </div>
     </div>
 </section>

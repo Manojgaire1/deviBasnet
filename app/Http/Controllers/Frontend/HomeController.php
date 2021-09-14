@@ -49,6 +49,15 @@ class HomeController extends Controller
         $banner = Banner::first();
         $about = Page::where('slug', 'about-me')->first();
         $hireme = Page::where('slug', 'hire-me')->first();
+        // dd($hireme->pageDetails);
+        $hiremeButtonLink = '';
+        if (isset($hireme->pageDetails)) {
+            $link = $hireme->pageDetails->where('meta_key', 'Link')->first();
+            if ($link) {
+                $hiremeButtonLink = $link->meta_value;
+            }
+
+        }
 
         //get the interest
         $interests = Interest::where('status', '1')->take(4)->get();
@@ -73,6 +82,7 @@ class HomeController extends Controller
             'banner' => $banner,
             'about' => $about,
             'hireme' => $hireme,
+            'hiremeButtonLink' => $hiremeButtonLink,
         ]);
     }
 
