@@ -1,7 +1,6 @@
 @extends('admin.layouts.master')
-@section('page_title','Activity lists')
+@section('page_title','Page lists')
 @section('page_specific_css')
-<link href="{{ asset('/admin-assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div class="pcoded-content vehicle">
@@ -15,11 +14,11 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <h2>Activities</h2>
+                                    <h2>Page</h2>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="add-new-vehicle">
-                                        <a href="#" class="btn-green border-radius-30 add-new-make">add New</a>
+                                        <a href="#" class="btn-green border-radius-30 add-new-make">add New Page</a>
                                     </div>
                                 </div>
                             </div>
@@ -27,14 +26,14 @@
                         </div>
                         <div class="card-block">
                             <div class="table-responsive dt-responsive">
-                                <table class="table table-striped table-bordered data-table activity_table">
+                                <table class="table table-striped table-bordered data-table page_table">
                                     <thead>
                                         <tr>
                                             <th>#</th>
                                             <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Type</th>
-                                            <th>status</th>
+                                            <th>Title</th>
+                                            <th>Excerpt</th>
+                                            <th>Desciption</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -57,54 +56,61 @@
 <!-- end single-page -->
 
 <div class="modal fade" id="add-new-make-modal">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add New Activity</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add Page</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-            <form id="activityForm" name="activityForm">
+            <form id="pageForm" name="pageForm">
                 @csrf
-                <div class="modal-body category_add_body">
+                <div class="modal-body page_add_body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="NRNA visit">
+                                <label for="name">Title</label>
+                                <input type="text" class="form-control" name="title" id="title" placeholder="Title">
                             </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label>Type</label>
-                                <select name="type" class="form-control">
-                                    <option value="" selected="selected" disabled>Select type</option>
-                                    @foreach($types as $type)
-                                    <option value="{{$type->id}}">{{$type->title}}</option>
-                                    @endforeach
-                                </select>
+                                <label for="excerpt">Excerpt</label>
+                                <input type="text" class="form-control" name="excerpt" id="excerpt"
+                                    placeholder="Sub Title">
                             </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <lable>Upload documents</label>
-                                    <input type="file" name="activity_doc" id="activity_doc" class="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <label>Status</label>
-                                <select name="status" class="form-control">
-                                    <option value="1" selected="selected">Active</option>
-                                    <option value="0">Inactive</option>
-                                </select>
+                                <label for="content">Desciption</label>
+                                <textarea class="form-control" name="content" id="content"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-6">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
                             <div class="form-group">
                                 <label>Upload Image</label>
-                                <div class="file-upload">
+                                <div class="file-upload" style="max-width:100%!important">
                                     <div class="image-upload-wrap"
                                         style="background: url({{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}});background-size: contain;">
                                         <img src="{{asset('/admin-assets/images/user-profile/2012_Councelling_Roka_2.png')}}"
                                             class="img-fluid image-preview-single">
-                                        <input class="file-upload-input" type="file" name="activity_image_path"
+                                        <input class="file-upload-input" type="file" name="page_image_path"
                                             onchange="previewFile(this);" accept="image/*">
                                         <div class="drag-text">
                                             <div class="icon">+</div>
@@ -119,22 +125,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="file-upload-btn btn-blue" type="button"
+                                <button style="max-width:100%!important" class="file-upload-btn btn-blue" type="button"
                                     onclick="$('.file-upload-input').trigger( 'click' )">Select Image
                                 </button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea class="form-control" name="description" id="description"></textarea>
-                            </div>
+
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="activity_id" id="activity_id" value="" />
+                <input type="hidden" name="page_id" id="page_id" value="" />
                 <div class="modal-footer">
                     <button type="submit" name="btnSubmit" class="btn btn-green">Save</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -165,11 +164,11 @@
             var make_url;
             var makeTable;
             var categoryId;
-            var form = document.getElementById('activityForm');
+            var form = document.getElementById('pageForm');
             //intialize the tinymce editor
             initTinyMce();
             //render the data in the datatable based on the fetched results
-            makeTable = $('.activity_table').DataTable({
+            makeTable = $('.page_table').DataTable({
                 dom: 'Blfrtip',
                 buttons: [],
                 order: [[0,'desc']],
@@ -181,10 +180,10 @@
                 processing: true,
                 serverSide: true,
                 language              : {
-                    searchPlaceholder     : "Search activity"
+                    searchPlaceholder     : "Search page"
                 },
                 ajax                  : {
-                    url :"{{route('admin.activity.index')}}",
+                    url :"{{route('admin.cms.page.index')}}",
                     type : "GET",
 
                 },
@@ -197,18 +196,13 @@
                     },
                     {'render'  :function(data, type, JsonResultRow, meta)
                         {
-                            return "<img src='"+ JsonResultRow.image_path + "' height='50px' width='100px'>";
+                            return "<img src='"+ JsonResultRow.featured_image + "' height='50px' width='100px'>";
                         }
                     },
-                    {"data": "activity_title", "name": "activities.title"},
-                    {"data": "title", "name": "types.title"},
-                    {
-                        data: 'status',
-                        name: 'status',
-                        render: function (data, type, full, meta) {
-                            return data == "1" ? "Active" : "Inactive";
-                        }
-                    },
+                    {"data": "title", "name": "pages.title"},
+                    {"data": "excerpt", "name": "pages.excerpt"},
+                    {"data": "content", "name": "pages.content"},
+                    
                     {"data": "action", "name": "action"},
 
                 ],
@@ -222,29 +216,15 @@
             form,
             {
                 fields: {
-                    name: {
+                    title: {
                         validators: {
                             notEmpty: {
-                                message: 'The activity name is required'
+                                message: 'The title is required'
                             },
                         }
                     },
-                    status: {
-                        validateField: {}
-
-                    },
-                    type: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The activity type is required'
-                            },
-                        }
-
-                    },
-                    description: {
-                        validateField: {}
-                    },
-                    activity_image_path: {
+                    
+                    page_image_path: {
                         validators: {
                             file: {
                                 extension: 'jpeg,jpg,png',
@@ -253,16 +233,8 @@
                                 message: 'You cannot upload the image that is greater than 2MB size'
                             }
                         }
-                    },
-                    activity_doc: {
-                        validators: {
-                            file: {
-                                extension: 'doc,pdf',
-                                type: 'application/msword,application/pdf',
-                                message: 'You can upload only doc and pdf and image'
-                            }
-                        }
                     }
+                    
                 },
                 plugins: {
                     trigger: new FormValidation.plugins.Trigger(),
@@ -279,15 +251,16 @@
                 },
 
             }).on('core.form.valid', function () {
-                makeId = $("#activity_id").val();
+                tinyMCE.triggerSave();
+                makeId = $("#page_id").val();
                 if (save_method == 'update') {
-                    make_url = "{{route('admin.activity.update',':make')}}";
+                    make_url = "{{route('admin.cms.page.update',':make')}}";
                     make_url = make_url.replace(":make",makeId);
                 } else {
-                    make_url = "{{route('admin.activity.store')}}";
+                    make_url = "{{route('admin.cms.page.store')}}";
                 }
                 // get the input values
-                result = new FormData($("#activityForm")[0]);
+                result = new FormData($("#pageForm")[0]);
                 $.ajax({
                     url: make_url,
                     data:result,
@@ -328,8 +301,8 @@
             //add new menu
             $('body').on('click', '.add-new-make', function () {
                 save_method = "add";
-                $("h5.modal-title").html('Create new activity')
-                $("#activity_id").val('');
+                $("h5.modal-title").html('Create new page')
+                $("#page_id").val('');
                 initTinyMce();
                 $('#add-new-make-modal').modal('show');
             });
@@ -341,9 +314,9 @@
                 //make the save method
                 save_method="update";
                 //need to pouplate the data in the field by fetching the data from the server
-                makeId = $(this).data('activity-id');
-                $("#activity_id").val(makeId);
-                menu_url   = "{{url('/admin/activities/')}}" + "/" + makeId + "/edit";
+                makeId = $(this).data('page-id');
+                $("#page_id").val(makeId);
+                menu_url   = "{{url('/admin/cms/pages')}}" + "/" + makeId + "/edit";
                 $.get(menu_url ,function(response){
                     //call the function to populate the data
                     if(response.status == "success"){
@@ -366,11 +339,11 @@
             //delete the menu
             $("body").on('click','.delete-btn', function(e){
                 e.preventDefault();
-                makeId=$(this).attr('data-activity-id');
-                make_url  = "{{url('/admin/activities/')}}" + "/" + makeId;
+                makeId=$(this).attr('data-page-id');
+                make_url  = "{{url('/admin/cms/pages')}}" + "/" + makeId;
                 swal({
                     title: "Are you sure?",
-                    text: "You will not be able to recover activity!",
+                    text: "You will not be able to recover page!",
                     icon: "warning",
                     buttons: {
                         cancel: "Cancel",
@@ -420,7 +393,7 @@
                 removeUpload();
                 fv.resetForm(true);
                 tinymce.EditorManager.editors = []; 
-                $("#description").text('');
+                // $("#description").text('');
                 showDefaultImage();
             });
             $.fn.dataTable.ext.errMode = 'none';
@@ -444,31 +417,17 @@
         //function to populate the modal data while the modal open in case of the edit menu option
         function populateModalData(response,has_set_menu_image){
             //change the modal heading
-            $("h5.modal-title").html('Update ' + response.activity.title + ' activity')
+            $("h5.modal-title").html('Update ' + response.page.title + ' page')
             //populate the individual field
-            $("#name").val(response.activity.title);
-            //loop through each 
-            var activity_status = $("select[name='status'] > option")
-            activity_status.each((index,value) =>{
-                if(response.activity.status == value.value){
-                    $("select[name='status']").val(response.activity.status)
-                }
-            })
-
-            var activity_type = $("select[name='type'] > option")
-            activity_type.each((index,value) =>{
-                if(response.activity.type_id == value.value){
-                    $("select[name='type']").val(response.activity.type_id)
-                }
-            })
-
+            $("#title").val(response.page.title);
+            $("#excerpt").val(response.page.excerpt);
             //set the content in the tinymce
-            if(response.activity.description != null)
-                tinymce.get('description').setContent(response.activity.description);
+            if(response.page.content != null)
+            tinymce.get('content').setContent(response.page.content);
             //set the if provided
-            if(response.activity.featured_image != null){
-                var image_directory = "{{asset('storage/uploads/activities/large')}}";
-                $(".image-preview-single").attr('src',image_directory + "/" + response.activity.featured_image);
+            if(response.page.featured_image != null){
+                var image_directory = "{{asset('storage/uploads/page/large')}}";
+                $(".image-preview-single").attr('src',image_directory + "/" + response.page.featured_image);
             }
         }
 

@@ -1,4 +1,3 @@
-
 <div class="pcoded-main-container">
     <div class="pcoded-wrapper">
         <nav class="pcoded-navbar">
@@ -13,7 +12,8 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/vehicles*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/vehicles*') ? 'active pcoded-trigger complete' : '' }}"
+                            dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">Banners</span>
@@ -36,7 +36,8 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/activities*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/activities*') ? 'active pcoded-trigger complete' : '' }}"
+                            dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">Activity</span>
@@ -59,15 +60,16 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/cms*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/cms*') ? 'active pcoded-trigger complete' : '' }}"
+                            dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">CMS</span>
                                 <span class="pcoded-mcaret"></span>
                             </a>
                             <ul class="pcoded-submenu">
-                                <li class="{{Request::is('admin/vehicles') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.banner.index')}}">
+                                <li class="{{Request::is('admin/cms/about') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.cms.page.about.edit')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext">{{ __('About me') }}</span>
                                         <span class="pcoded-mcaret"></span>
@@ -80,9 +82,17 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                <li class="{{Request::is('admin/cms/pages') ? 'active ' : '' }}">
+                                    <a href="{{route('admin.cms.page.index')}}">
+                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                        <span class="pcoded-mtext">{{ __('Pages') }}</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="pcoded-hasmenu {{Request::is('admin/blogs*') ? 'active pcoded-trigger complete' : '' }}" dropdown-icon="style1" subitem-icon="style6">
+                        <li class="pcoded-hasmenu {{Request::is('admin/blogs*') ? 'active pcoded-trigger complete' : '' }}"
+                            dropdown-icon="style1" subitem-icon="style6">
                             <a href="javascript:void(0)">
                                 <span class="pcoded-micon"><i class="ti-car"></i><b>C</b></span>
                                 <span class="pcoded-mtext" data-i18n="nav.extra-components.main">Blog</span>
@@ -120,4 +130,4 @@
                             </a>
                         </li>
                 </div>
-            </nav>
+        </nav>
