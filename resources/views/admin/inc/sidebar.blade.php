@@ -68,13 +68,6 @@
                                 <span class="pcoded-mcaret"></span>
                             </a>
                             <ul class="pcoded-submenu">
-                                <li class="{{Request::is('admin/cms/about') ? 'active ' : '' }}">
-                                    <a href="{{route('admin.cms.page.about.edit')}}">
-                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                        <span class="pcoded-mtext">{{ __('About me') }}</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
                                 <li class="{{Request::is('admin/cms/interests') ? 'active ' : '' }}">
                                     <a href="{{route('admin.cms.interest.index')}}">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>

@@ -48,7 +48,7 @@ class HomeController extends Controller
         // get the banner
         $banner = Banner::first();
         $about = Page::where('slug', 'about-me')->first();
-        $hireme = Page::where('slug', 'hire-me')->first();
+        $hireme = Page::where('slug', 'nrna-election-2021')->first();
         // dd($hireme->pageDetails);
         $hiremeButtonLink = '';
         if (isset($hireme->pageDetails)) {
