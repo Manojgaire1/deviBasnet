@@ -113,7 +113,7 @@
         /******************************************************************************************************************/
         /** PRETTY PHOTO                                                                                                  */
         /******************************************************************************************************************/
-        var prettyPhoto = $("a[data-rel^='prettyPhoto']", portfolio);
+        var prettyPhoto = $("a.light-box[data-rel^='prettyPhoto']", portfolio);
         prettyPhoto.prettyPhoto({
             animationSpeed: 'slow',
             social_tools: false,
