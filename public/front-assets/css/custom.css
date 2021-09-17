@@ -20,7 +20,7 @@
 /******************************************************************************************************************/
 /** GENERAL TEMPLATE STYLES                                                                                       */
 /******************************************************************************************************************/
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); */
 html {
     overflow-x: hidden;
 }
@@ -1349,4 +1349,25 @@ a.light-box[data-rel^='prettyPhoto'] {
 
 #portfolio .item .buttons a:hover {
     color: #0404a9;
+}
+#custom__modal .content-block {
+    margin-top: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#custom__modal .row {
+    margin: 0 -4px;
+}
+
+#custom__modal .row .col-md-6 {
+    padding: 0 4px;
+}
+#custom__modal .content-block a {
+    color: #333;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 5px;
 }

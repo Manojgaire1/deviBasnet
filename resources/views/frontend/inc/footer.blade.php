@@ -57,6 +57,49 @@
 
 </div>
 
+<div id="custom__modal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center">This is title</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+				<div class="row">
+                    <div class="col-md-6">
+                        <div class="image-content-block text-center">
+                            <div class="image-block">
+                                <img src="{{asset('front-assets/img/dbb1.png')}}" alt="">
+                            </div>
+                            <div class="content-block">
+                                <h5>Title</h5>
+                                <p>locale accept from http</p>
+                                <a href="">click here </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col  -->
+
+                    <div class="col-md-6">
+                        <div class="image-content-block text-center">
+                            <div class="image-block">
+                            <img src="{{asset('front-assets/img/dbb2.png')}}" alt="">
+                            </div>
+                            <div class="content-block">
+                                <h5>Title</h5>
+                                <p>locale accept from http</p>
+                                <a href="">click here </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col  -->
+                </div>
+               <!-- end row  -->
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="{{asset('front-assets/js/jquery-3.1.1.min.js')}}"></script>
 <script src="{{asset('front-assets/js/jquery-migrate-3.0.0.min.js')}}"></script>
