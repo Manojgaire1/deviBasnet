@@ -1399,3 +1399,18 @@ img {
 #custom__modal button.close{
     color:#fff;
 }
+.my-opinion .slide-image {
+    position: relative;
+    padding-top: 56%;
+    overflow: hidden;
+}
+
+.my-opinion .slide-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    object-position: top;
+}
