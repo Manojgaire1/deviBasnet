@@ -1308,6 +1308,14 @@ a.light-box[data-rel^='prettyPhoto'] {
 }
 #portfolio .item-wrap {
     position: relative;
+    /* background: #ccc; */
+    padding-top: 76.5%;
+    background-size: cover !important;
+}
+#portfolio .item-wrap .for-title-value {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
 }
 #portfolio .item {
     padding: 3px;

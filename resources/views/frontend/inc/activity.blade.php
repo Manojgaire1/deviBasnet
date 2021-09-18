@@ -18,12 +18,12 @@
                 @foreach($activities as $activity)
                 <div class="item @if($activity->slug == 'social'){{'col-md-4 col-lg-2'}}@else{{'col-md-4 col-lg-2'}}@endif {{$activity->slug}}" data-category="{{$activity->slug}}">
                     <div class="item-wrap">
-                        <img class="img-fluid" src="{{asset('storage/uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
+                        
                         <div class="buttons">
                             <a class="light-box" title="{!! $activity->description !!}"
                         data-rel="prettyPhoto"
                         href="{{asset('storage/uploads/activities/'.$activity->featured_image)}}">
-                            
+                            <img class="for-title-value" src="{{asset('storage/uploads/activities/'.$activity->featured_image)}}" alt="{{$activity->activity_title}}">
                                 <!-- <span class="magnifier"></span> -->
                                 <i class="fa fa-search-plus" aria-hidden="true"></i>
 
