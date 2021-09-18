@@ -1,6 +1,6 @@
 <!-- HERO AREA -->
 <div class="jumbotron" @if(isset($banner))
-    style="background: url('{{asset('storage/uploads/banners/large' . '/' . $banner->featured_image)}}'); background-size:cover;background-color:#ffffff"
+    style="background: url('{{asset('storage/uploads/banners' . '/' . $banner->featured_image)}}'); background-size:cover;background-color:#ffffff"
     @endif id="hero" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
     <div class="container">
         @if(isset($banner))
