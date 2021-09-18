@@ -12,6 +12,7 @@ use App\Models\Setting;
 use App\Models\Testimonial;
 use App\Models\Timeline;
 use App\Models\Type;
+use Session;
 
 class HomeController extends Controller
 {

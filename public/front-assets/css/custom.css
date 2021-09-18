@@ -1371,3 +1371,23 @@ img {
     display: block;
     margin-bottom: 5px;
 }
+#custom__modal .modal-dialog.modal-dialog-centered{
+    max-width: 750px;
+}
+#custom__modal h5.modal-title.text-center {
+    font-weight: bold;
+    color: #fff;
+}
+
+#custom__modal .modal-content{
+    background:#000;
+}
+
+#custom__modal .image-content-block h2{
+    color: #fff;
+    font-size: 1rem;
+}
+
+#custom__modal button.close{
+    color:#fff;
+}

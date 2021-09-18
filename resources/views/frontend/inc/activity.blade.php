@@ -28,9 +28,9 @@
                                 <i class="fa fa-search-plus" aria-hidden="true"></i>
 
                             </a>
-
-                            <a href="#" class="button-link"><i class="fa fa-link" aria-hidden="true"></i>
-</a>
+                            @if(isset($activity->documents_path))
+                                <a href="{{url('/storage/uploads/activities/doc/'.$activity->documents_path)}}" class="button-link" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+                            @endif
                         </div>
                     </div>
                     

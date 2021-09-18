@@ -56,40 +56,44 @@
     <!-- FOOTER END -->
 
 </div>
-
+@if(!session()->has('show_modal'))
+@php(session()->put('show_modal',true))
+@if(Request::is('/'))
 <div id="custom__modal" class="modal fade">
     <div class="modal-dialog modal-dialog-centered ">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-center">This is title</h5>
+                <h5 class="modal-title text-center">NRNA ELECTION 2021 - AGENDAS AND SHORT INFO</h5>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
 				<div class="row">
                     <div class="col-md-6">
                         <div class="image-content-block text-center">
+                            <h2>AGENDAS</h2>
                             <div class="image-block">
                                 <img src="{{asset('front-assets/img/dbb1.png')}}" alt="">
                             </div>
-                            <div class="content-block">
+                            <!-- <div class="content-block">
                                 <h5>Title</h5>
                                 <p>locale accept from http</p>
                                 <a href="">click here </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- end col  -->
 
                     <div class="col-md-6">
                         <div class="image-content-block text-center">
+                            <h2>SHORT INFO</h2>
                             <div class="image-block">
                             <img src="{{asset('front-assets/img/dbb2.png')}}" alt="">
                             </div>
-                            <div class="content-block">
+                            <!-- <div class="content-block">
                                 <h5>Title</h5>
                                 <p>locale accept from http</p>
                                 <a href="">click here </a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- end col  -->
@@ -99,7 +103,8 @@
         </div>
     </div>
 </div>
-
+@endif
+@endif
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
 <script src="{{asset('front-assets/js/jquery-3.1.1.min.js')}}"></script>
 <script src="{{asset('front-assets/js/jquery-migrate-3.0.0.min.js')}}"></script>
