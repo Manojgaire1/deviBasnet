@@ -122,7 +122,6 @@
 <script src="{{asset('front-assets/js/particles.min.js')}}"></script>
 <script src="{{asset('front-assets/js/config.js')}}"></script>
 <script src="{{asset('front-assets/js/custom.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMYUCUdT1WkZJFkrpI4IzEObG8_YNcZPg&callback=myMap"></script>
 @yield('page_specific_js')
 
 </body>
