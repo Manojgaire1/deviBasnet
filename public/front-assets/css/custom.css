@@ -20,6 +20,7 @@
 /******************************************************************************************************************/
 /** GENERAL TEMPLATE STYLES                                                                                       */
 /******************************************************************************************************************/
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); */
 html {
     overflow-x: hidden;
 }
@@ -1294,4 +1295,79 @@ form.login-form .btn-primary:hover {
 }
 #testimonials .testimonial-quote p {
     display: inline-block;
+}
+
+a.light-box[data-rel^='prettyPhoto'] {
+    position: relative;
+}
+
+#portfolio .item .button-link {
+    color: #333;
+    display: block;
+    padding: 10px;
+}
+#portfolio .item-wrap {
+    position: relative;
+}
+#portfolio .item {
+    padding: 3px;
+}
+#portfolio .item .buttons {
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease-in-out;
+}
+
+#portfolio .item:hover .buttons{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#portfolio .item .buttons a {
+    color: #666;
+    background: #fff;
+    padding: 0;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 18px;
+}
+
+#portfolio .item .buttons a:hover {
+    color: #0404a9;
+}
+#custom__modal .content-block {
+    margin-top: 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#custom__modal .row {
+    margin: 0 -4px;
+}
+
+#custom__modal .row .col-md-6 {
+    padding: 0 4px;
+}
+#custom__modal .content-block a {
+    color: #333;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 5px;
 }
